@@ -1,0 +1,19 @@
+{
+  "name": "tristancalvet_3_10082021",
+  "version": "1.0.0",
+  "description": "OCR-DevWeb-Projet 3",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:.public/css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TCGit08/TristanCalvet_3_16072021.git"
+  },
+  "author": "TCGit08",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TCGit08/TristanCalvet_3_16072021/issues"
+  },
+  "homepage": "https://github.com/TCGit08/TristanCalvet_3_16072021#readme"
+}
