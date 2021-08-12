@@ -28,7 +28,7 @@ A quoi sert chacun d’entre eux :
 
     components/ est utilisé pour ranger les blocs BEM qui sont plus indépendants, comme les boutons.
 
-Alors que les layouts peuvent utiliser d’autres composants pour générer leurs contenus, les composants, eux, sont plus élémentaires. Par exemple, un formulaire doit être considéré comme un layout : la mise en page est une fonction vitale du bloc et il utilise d’autres blocs pour fonctionner,  comme des boutons. En revanche, le bouton lui-même est un composant car il n’a besoin d’aucun autre composant pour remplir sa fonction ;
+    Alors que les layouts peuvent utiliser d’autres composants pour générer leurs contenus, les composants, eux, sont plus élémentaires. Par exemple, un formulaire doit être considéré comme un layout : la mise en page est une fonction vitale du bloc et il utilise d’autres blocs pour fonctionner,  comme des boutons. En revanche, le bouton lui-même est un composant car il n’a besoin d’aucun autre composant pour remplir sa fonction ;
 
     pages/ contient les blocs de code qui ne s’appliquent qu’à une seule page. Vous utilisez des boutons dans tout votre site, en revanche votre page d’accueil comporte une section Citation et une grille de projets qui ne sont employés nulle part ailleurs. En d’autres termes, pages/ contient des règles spécifiques à une seule page qui ne seront pas réutilisées ailleurs ;
 
@@ -39,108 +39,108 @@ Alors que les layouts peuvent utiliser d’autres composants pour générer leur
 
 Nettoyez et réorganisez vos fichiers
 
-Commençons par ranger un peu en mettant toutes les variables dans leur fichier attitré. Pour cela, créez un fichier dans le dossier Utils, nommé  _variables.scss  :
+    Commençons par ranger un peu en mettant toutes les variables dans leur fichier attitré. Pour cela, créez un fichier dans le dossier Utils, nommé  _variables.scss  :
 
-Vous avez maintenant un fichier pour vos variables imbriquées dans le directory utils/. Son titre est logique : un fichier nommé “variables” pour ranger des variables. 
+    Vous avez maintenant un fichier pour vos variables imbriquées dans le directory utils/. Son titre est logique : un fichier nommé “variables” pour ranger des variables. 
 
-Lorsque vous séparez votre code, les fichiers individuels font tous partie d’une codebase globale, du coup Sass les appelle des partiels. Pour indiquer à Sass qu’un fichier est un partiel, vous devez lui ajouter le préfixe underscore (_).
+    Lorsque vous séparez votre code, les fichiers individuels font tous partie d’une codebase globale, du coup Sass les appelle des partiels. Pour indiquer à Sass qu’un fichier est un partiel, vous devez lui ajouter le préfixe underscore (_).
 
-Tous les partiels commencent par un underscore (_), suivi de son nom (ici variables) puis de l’extension de fichier   .scss  👉🏼  _variables.scss
+    Tous les partiels commencent par un underscore (_), suivi de son nom (ici variables) puis de l’extension de fichier   .scss  👉🏼  _variables.scss
 
-Nous avons un fichier pour nos variables ; à présent nous pouvons couper nos variables de notre fichier scss principal pour les coller dans notre nouveau fichier   _variables.scss.
+    Nous avons un fichier pour nos variables ; à présent nous pouvons couper nos variables de notre fichier scss principal pour les coller dans notre nouveau fichier   _variables.scss.
 
-Avant de pouvoir utiliser du code qui a été découpé en partiels, vous devez préciser dans votre codebase où importer ces nouvelles variables. Comment ? En utilisant le mot clé @import.
-
-	@import "./utils/variables";
-
-Pour importer les variables, vous devez taper @import suivi d’une paire de guillemets. Entre les guillemets, renseignez le chemin vers le partiel des variables.
-
-Le chemin traduit l’endroit où se situe votre fichier par rapport à votre point de départ.
-
-Le point (.) indique à Sass que pour arriver jusque variables, le chemin commence dans le même dossier que main.scss. Ensuite, /utils/ mène Sass au directory utils dans lequel il trouvera le partiel variables.
-
-Notez qu’on n’utilise pas d’underscore ni d’extension de fichier lorsqu’on indique dans le chemin le nom du fichier du partiel. Lors de l’importation d’un partiel, Sass sait qu’il lui faut chercher un fichier commençant par un underscore et qu’il s’agit d’un fichier Sass, pas besoin de le préciser.
-
-D’une manière générale, pour éviter les erreurs, faites en sorte d’importer vos fichiers dans l’ordre suivant :
-
-    Utils :
-
-        Variables.
-
-        Fonctions.
-
-        Mixins.
-
-        Placeholders.
-
-    Feuilles de style de tiers (vendors) (si vous en avez).
-
-    Base.
-
-    Composants.
-
-    Layout.
-
-    Pages.
-
-    Thèmes.
-
-Vous n’aurez sans doute pas besoin de tous ces dossiers pour chaque site sur lesquels vous travaillerez. Le site que nous construisons dans ce cours n’utilise pas de feuilles de styles externes, ni de thèmes, par exemple. Mais il est important que vous les connaissiez 👌.
-
-Une fois que l’ensemble du code a bien été séparé en partiels et importé, le fichier main.scss ne doit contenir que des imports. Les ensembles de règles sont eux aussi rangés dans leurs propres partiels :
+    Avant de pouvoir utiliser du code qui a été découpé en partiels, vous devez préciser dans votre codebase où importer ces nouvelles variables. Comment ? En utilisant le mot clé @import.
 
 	@import "./utils/variables";
 
-	@import "./utils/functions";
+    Pour importer les variables, vous devez taper @import suivi d’une paire de guillemets. Entre les guillemets, renseignez le chemin vers le partiel des variables.
 
-	@import "./utils/mixins";
+    Le chemin traduit l’endroit où se situe votre fichier par rapport à votre point de départ.
 
-	@import "./utils/extensions";
+    Le point (.) indique à Sass que pour arriver jusque variables, le chemin commence dans le même dossier que main.scss. Ensuite, /utils/ mène Sass au directory utils dans lequel il trouvera le partiel variables.
 
-	@import "./base/base";
+    Notez qu’on n’utilise pas d’underscore ni d’extension de fichier lorsqu’on indique dans le chemin le nom du fichier du partiel. Lors de l’importation d’un partiel, Sass sait qu’il lui faut chercher un fichier commençant par un underscore et qu’il s’agit d’un fichier Sass, pas besoin de le préciser.
 
-	@import "./base/typography";
+    D’une manière générale, pour éviter les erreurs, faites en sorte d’importer vos fichiers dans l’ordre suivant :
 
-	@import "./components/buttons";
+        Utils :
 
-	@import "./layouts/header";
+            Variables.
 
-	@import "./layouts/nav";
+            Fonctions.
 
-	@import "./layouts/container";
+            Mixins.
 
-	@import "./layouts/form";
+            Placeholders.
 
-	@import "./pages/work";
+        Feuilles de style de tiers (vendors) (si vous en avez).
 
-	@import "./pages/about";
+        Base.
 
-	@import "./pages/project";
+        Composants.
 
-À présent, pour trouver un bout de code, c’est aussi simple que de regarder votre fichier main.scss pour voir où il est rangé ! Facile à lire, à écrire et à maintenir. Les règles d’or du code sont honorées !
+        Layout.
 
-En résumé
+        Pages.
 
-    Le système de fichiers 7-1 se compose de sept dossiers thématiques qui sont regroupés dans un fichier .scss. 
+        Thèmes.
 
-    Les 7 directories thématiques sont : 
+    Vous n’aurez sans doute pas besoin de tous ces dossiers pour chaque site sur lesquels vous travaillerez. Le site que nous construisons dans ce cours n’utilise pas de feuilles de styles externes, ni de thèmes, par exemple. Mais il est important que vous les connaissiez 👌.
 
-        Base ;
+    Une fois que l’ensemble du code a bien été séparé en partiels et importé, le fichier main.scss ne doit contenir que des imports. Les ensembles de règles sont eux aussi rangés dans leurs propres partiels :
 
-        Utils ;
+	   @import "./utils/variables";
 
-        Layout (mise en page) ;
+	   @import "./utils/functions";
 
-        Composants ;
+	   @import "./utils/mixins";
 
-        Pages ;
+	   @import "./utils/extensions";
 
-        Thèmes ;
+	   @import "./base/base";
 
-        Vendors (tiers).
+	   @import "./base/typography";
 
-    Dans Sass, les différents fichiers s’appellent des partiels. Ils commencent par un underscore. 
+	   @import "./components/buttons";
 
-    On importe les partiels dans le fichier principal  .scss  en utilisant le mot clé  @import  . 
+	   @import "./layouts/header";
 
-    Dans Sass, les partiels sont compilés dans le même ordre que celui dans lequel ils sont importés.  
+	   @import "./layouts/nav";
+
+	   @import "./layouts/container";
+
+	   @import "./layouts/form";
+
+	   @import "./pages/work";
+
+	   @import "./pages/about";
+
+	   @import "./pages/project";
+
+    À présent, pour trouver un bout de code, c’est aussi simple que de regarder votre fichier main.scss pour voir où il est rangé ! Facile à lire, à écrire et à maintenir. Les règles d’or du code sont honorées !
+
+    En résumé
+
+        Le système de fichiers 7-1 se compose de sept dossiers thématiques qui sont regroupés dans un fichier .scss. 
+
+        Les 7 directories thématiques sont : 
+
+            Base ;
+
+            Utils ;
+
+            Layout (mise en page) ;
+
+            Composants ;
+
+            Pages ;
+
+            Thèmes ;
+
+            Vendors (tiers).
+
+        Dans Sass, les différents fichiers s’appellent des partiels. Ils commencent par un underscore. 
+
+        On importe les partiels dans le fichier principal  .scss  en utilisant le mot clé  @import  . 
+
+        Dans Sass, les partiels sont compilés dans le même ordre que celui dans lequel ils sont importés.  
