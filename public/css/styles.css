@@ -28,7 +28,7 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 header img {
@@ -58,6 +58,7 @@ header img {
 .form_localisation form input {
   width: 70%;
   font-size: 1.1em;
+  font-weight: 400;
   color: black;
   border: none;
   border-width: 0;
@@ -69,7 +70,8 @@ header img {
 .bloc_présentation {
   width: 100%;
   padding-top: 20px;
-  margin-bottom: 60px;
+  padding-bottom: 80px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,12 +91,15 @@ header img {
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
+  font-weight: 300;
 }
-.bloc_présentation a {
-  width: 220px;
-  height: 50px;
+.bloc_présentation .button_explo_restau {
+  width: 219px;
+  height: 49px;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
-.bloc_présentation a .button_explo_restau button {
+.bloc_présentation .button_explo_restau button {
   width: 220px;
   padding: 15px 15px 15px 13px;
   background: linear-gradient(to top, #9356DC, 45%, #FF79DA);
@@ -110,12 +115,15 @@ header img {
   width: 100%;
 }
 .bloc_fonctionnement h2 {
+  font-size: 1.5em;
   padding-left: 20px;
+  padding-bottom: 10px;
 }
 .bloc_fonctionnement .bloc_fonctions {
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
 }
@@ -142,12 +150,14 @@ header img {
   display: flex;
   border-radius: 25px 25px 25px 25px;
   padding: 10px 0px 10px 0px;
+  margin-left: 13px;
   background: #f1f1f1;
   box-shadow: 0px 5px 15px #dbdbdb;
 }
 @media (min-width: 1040px) {
   .bloc_fonctionnement .bloc_fonctions .fonction_choix {
-    padding-right: 20px;
+    padding-right: 10px;
+    width: 300px;
   }
 }
 .bloc_fonctionnement .bloc_fonctions .fonction_choix span {
@@ -156,17 +166,28 @@ header img {
   color: white;
   padding: 4px 8px 3px 8px;
   border-radius: 20px 20px 20px 20px;
+  position: relative;
+  right: 13px;
 }
 .bloc_fonctionnement .bloc_fonctions .fonction_choix i {
-  padding-left: 20px;
-  font-size: 1.1em;
+  font-size: 1.2em;
   color: grey;
+  position: absolute;
+  padding-left: 35px;
+  justify-content: center;
 }
 .bloc_fonctionnement .bloc_fonctions .fonction_choix p {
+  width: 100%;
   font-size: 1em;
   color: black;
-  padding-right: 70px;
-  padding-left: 20px;
+  padding-right: 40px;
+  padding-left: 55px;
+  font-weight: 500;
+}
+@media (min-width: 1040px) {
+  .bloc_fonctionnement .bloc_fonctions .fonction_choix p {
+    font-size: 0.9em;
+  }
 }
 
 .bloc_restaurant {
@@ -175,9 +196,14 @@ header img {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-bottom: 50px;
 }
 .bloc_restaurant h2 {
+  font-size: 1.5em;
+  padding-top: 35px;
+  padding-bottom: 10px;
   padding-left: 20px;
+  margin-bottom: 0px;
 }
 .bloc_restaurant .bloc_carte_restaurant {
   width: 100%;
@@ -189,16 +215,25 @@ header img {
     flex-wrap: wrap;
   }
 }
+@media (min-width: 650px) and (max-width: 1079px) {
+  .bloc_restaurant .bloc_carte_restaurant {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur {
+  height: 270px;
   position: relative;
   z-index: 1;
   padding-left: 20px;
   padding-right: 20px;
 }
-@media (min-width: 700px) and (max-width: 1079px) {
+@media (min-width: 650px) and (max-width: 1079px) {
   .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur {
     justify-content: center;
-    width: 50%;
+    width: 65%;
   }
 }
 @media (min-width: 1080px) {
@@ -211,20 +246,20 @@ header img {
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
-  height: 250px;
+  height: 100%;
   color: #000;
   border-radius: 20px 20px 20px 20px;
 }
 .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant {
   background: white;
   width: 100%;
-  height: 250px;
+  height: 240px;
   border: 1px solid white;
   border-radius: 20px 20px 20px 20px;
-  box-shadow: 0px 5px 15px #dbdbdb;
+  box-shadow: 0px 10px 15px #dbdbdb;
 }
 .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new {
-  height: 180px;
+  height: 160px;
 }
 .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new img {
   position: relative;
@@ -243,10 +278,10 @@ header img {
   z-index: 3;
   bottom: 150px;
   left: 75%;
-  padding: 8px;
+  padding: 6px 6px 6px 9px;
   font-size: 0.8em;
   font-weight: bold;
-  color: #3a695e;
+  color: #1e8f74;
   background-color: #7cd4be;
   border-radius: 2px;
 }
@@ -258,11 +293,13 @@ header img {
 .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description {
   display: flex;
   height: 50px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 20px;
 }
 .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description .carte_texte {
   width: 80%;
   padding-left: 10px;
+  padding-bottom: 0px;
 }
 .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description .carte_texte h3 {
   font-weight: bold;
@@ -270,24 +307,26 @@ header img {
 .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description .carte_texte h4 {
   font-size: 1em;
   font-weight: 300;
-  padding-top: 5px;
+  padding-top: 3px;
 }
 .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .icône_interract {
   width: 30px;
+  font-size: 1em;
+  font-weight: 100;
   position: relative;
   z-index: 2;
-  left: 80%;
-  bottom: 80px;
+  left: 85%;
+  bottom: 75px;
 }
 .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .icône_interract i {
-  font-size: 1.6em;
+  font-size: 1.5em;
 }
 
 footer {
   width: 100%;
-  margin-top: 40px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  margin-top: 0px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   background: #4e4e4e;
   color: white;
   display: flex;

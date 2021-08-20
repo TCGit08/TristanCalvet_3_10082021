@@ -37,7 +37,7 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
 
     img {
@@ -54,90 +54,95 @@ header {
     align-items: center;
     padding: 20px 0px 20px 0px;
 
-        form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 70%;
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
     
-            i {
-                font-size: 1.2em;
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-
-            input {
-                width: 70%;
-                font-size: 1.1em;
-                color: black;
-                border: none; 
-                border-width: 0; 
-                box-shadow: none;
-                background:transparent;
-                padding-left: 15px;        
-            }
-
+        i {
+            font-size: 1.2em;
+            padding-left: 10px;
+            padding-right: 10px;
         }
+
+        input {
+            width: 70%;
+            font-size: 1.1em;
+            font-weight: 400;
+            color: black;
+            border: none; 
+            border-width: 0; 
+            box-shadow: none;
+            background:transparent;
+            padding-left: 15px;        
+        }
+
+    }
 }
 
 .bloc_présentation {
-        width: 100%;
-        padding-top: 20px;
-        margin-bottom: 60px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: rgb(248, 248, 248);
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 80px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(248, 248, 248);
                 
-        h1 {
-            font-size: 1.5em;
-            text-align: center;
-            padding-left: 30px;
-            padding-right: 30px;
-            margin-bottom: 0%;
-        }
+    h1 {
+        font-size: 1.5em;
+        text-align: center;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-bottom: 0%;
+    }
 
-        p{
-            font-size: 1.0em;
-            color: black;
-            text-align: center;
-            padding-left: 30px;
-            padding-right: 30px;
-        }
+    p {
+        font-size: 1.0em;
+        color: black;
+        text-align: center;
+        padding-left: 30px;
+        padding-right: 30px;
+        font-weight: 300;
+    }
 
-        a {         
+    .button_explo_restau {
+        width: 219px;
+        height: 49px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+                
+        button {
             width: 220px;
-            height: 50px;
-        
-            .button_explo_restau{
-                              
-                button {
-                    width: 220px;
-                    padding: 15px 15px 15px 13px;
-                    background: linear-gradient(to top, #9356DC, 45%, #FF79DA);
-                    border: transparent;
-                    border-radius: 30px 30px 30px 30px;
-                    font-size: 0.9em;
-                    color: white;
-                    font-weight: bold;
-                    box-shadow: 0px 5px 5px rgb(207, 207, 207);
-                }
-            }
+            padding: 15px 15px 15px 13px;
+            background: linear-gradient(to top, #9356DC, 45%, #FF79DA);
+            border: transparent;
+            border-radius: 30px 30px 30px 30px;
+            font-size: 0.9em;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0px 5px 5px rgb(207, 207, 207);
         }
+    }
 }
 
 .bloc_fonctionnement {
     width: 100%;
 
     h2 {
+        font-size: 1.5em;
         padding-left: 20px;
+        padding-bottom: 10px;
     }
 
     .bloc_fonctions {
         width: 100%;
         padding-left: 20px;
         padding-right: 20px;
+        margin-bottom: 40px;
         display: flex;
         flex-direction: column;
 
@@ -164,11 +169,13 @@ header {
             display: flex;
             border-radius: 25px 25px 25px 25px;
             padding: 10px 0px 10px 0px;
+            margin-left: 13px;
             background: rgb(241, 241, 241);
             box-shadow: 0px 5px 15px rgb(219, 219, 219);
 
             @media (min-width: 1040px){
-                padding-right: 20px;
+                padding-right: 10px;
+                width: 300px;
             }
 
             span {
@@ -177,19 +184,30 @@ header {
                 color: white;
                 padding: 4px 8px 3px 8px;
                 border-radius: 20px 20px 20px 20px;
+                position: relative;
+                right: 13px;
             }
 
             i {
-                padding-left: 20px;
-                font-size: 1.1em;
+                font-size: 1.2em;
                 color: grey;
+                position: absolute;
+                padding-left: 35px;
+                justify-content: center;
             }
 
             p {
+                width: 100%;
                 font-size: 1.0em;
                 color:black;
-                padding-right: 70px;
-                padding-left: 20px;
+                padding-right: 40px;
+                padding-left: 55px;
+                font-weight: 500;
+
+                @media (min-width: 1040px){
+                    font-size: 0.9em;
+                }
+
             }
         }
        
@@ -202,10 +220,15 @@ header {
     background: rgb(241, 241, 241);
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
+    padding-bottom: 50px; 
 
     h2 {
+        font-size: 1.5em;
+        padding-top: 35px;        
+        padding-bottom: 10px;
         padding-left: 20px;
+        margin-bottom: 0px;
     }
 
     .bloc_carte_restaurant {
@@ -215,23 +238,26 @@ header {
         @media (min-width: 1080px){
             display: flex;
             flex-direction: row; 
-            flex-wrap: wrap;       
-            
+            flex-wrap: wrap;        
         }
+
+        @media (min-width: 650px) and (max-width: 1079px){
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }        
     
-        .bloc_carte_coeur{  
+        .bloc_carte_coeur{
+            height: 270px;  
             position: relative;
             z-index: 1;
             padding-left: 20px;
             padding-right: 20px;
         
-            @media (min-width: 700px) and (max-width: 1079px){
-                
-                
+            @media (min-width: 650px) and (max-width: 1079px){
                 justify-content: center;
-                width: 50%;
-               
-                
+                width: 65%;               
             }
 
             @media (min-width: 1080px){          
@@ -243,20 +269,21 @@ header {
                 width: 100%;
                 padding-left: 20px;
                 padding-right: 20px;
-                height: 250px;
+                height: 100%;
                 color: #000;
                 border-radius: 20px 20px 20px 20px;
         
                 .carte_restaurant {
                     background: white;
                     width: 100%;
-                    height: 250px;
+                    height: 240px;
                     border: 1px solid white;
                     border-radius: 20px 20px 20px 20px;
-                    box-shadow: 0px 5px 15px rgb(219, 219, 219);             
+                    box-shadow: 0px 10px 15px rgb(219, 219, 219);             
 
                     .img_new{
-                        height: 180px;
+                        height: 160px;
+    
                         img {
                             position: relative;
                             z-index: 2;
@@ -275,10 +302,10 @@ header {
                             z-index: 3;
                             bottom: 150px;
                             left: 75%;
-                            padding: 8px;
+                            padding: 6px 6px 6px 9px;
                             font-size: 0.8em;
                             font-weight: bold;
-                            color: #3a695e;
+                            color: #1e8f74;
                             background-color: #7cd4be;
                             border-radius: 2px; 
                             
@@ -293,11 +320,13 @@ header {
                     .carte_description {
                         display: flex; 
                         height: 50px;
-                        padding-bottom: 10px;
+                        padding-top: 15px;
+                        padding-bottom: 20px;
 
                         .carte_texte {
                             width: 80%;
                             padding-left: 10px;
+                            padding-bottom: 0px;
                     
                             h3 {
                                 font-weight: bold;
@@ -306,7 +335,7 @@ header {
                             h4 {
                                 font-size: 1.0em;
                                 font-weight: 300;
-                                padding-top: 5px;
+                                padding-top: 3px;
                             }
                         }
 
@@ -316,12 +345,15 @@ header {
 
             .icône_interract{
                 width: 30px;
+                font-size: 1.0em;
+                font-weight: 100;
                 position: relative;
                 z-index: 2;
-                left: 80%;
-                bottom: 80px;
+                left: 85%;
+                bottom: 75px;
+
                 i {
-                font-size: 1.6em;
+                    font-size: 1.5em;
                 }
             }
         }                              
@@ -330,9 +362,9 @@ header {
 
 footer {
     width: 100%;
-    margin-top: 40px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    margin-top: 0px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     background: rgb(78, 78, 78);
     color: white;
     display: flex;
