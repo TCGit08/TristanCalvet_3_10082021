@@ -36,7 +36,7 @@ header {
     margin-top: 30px;
     margin-bottom: 20px;
 
-    &__a {
+    a {
         i {
             font-size: 2.0em;
             padding-right: 100px;
@@ -49,6 +49,7 @@ header {
 }
 
 main {
+    
     .form_localisation {
         width: 100%;
         background: linear-gradient(to bottom, darkgrey, 2%, rgb(243, 243, 243));
@@ -134,6 +135,7 @@ main {
     }
 
     .bloc_fonctionnement {
+        
         width: 100%;
 
         h2 {
@@ -364,10 +366,12 @@ main {
         }
     }
 
+
+
     .fond_restaurant {
 
         img {
-            width: 100%
+            width: 50%
             height 200px;
         }
     }
@@ -379,18 +383,18 @@ main {
         border-radius: 30px 30px 30px 30px;
 
         .nom_restaurant {
-
+        
             h1 {
                 font-family: 'Shrikhand', cursive;
             }
 
-            i {
+                i {
+
+                }
 
             }
 
-        }
-
-        .bloc_entrées {
+        .bloc_entrées{
 
             h2 {
 
@@ -402,7 +406,8 @@ main {
 
                 }
 
-                h4 {
+                h4{
+
 
                 }
 
@@ -419,18 +424,19 @@ main {
         }
 
         .bloc_plats {
-
+         
             h2 {
 
             }
 
             .menu_proposition {
-
+                
                 h3 {
 
                 }
 
                 h4 {
+
 
                 }
 
@@ -443,6 +449,7 @@ main {
                 }
 
             }
+
         }
 
         .bloc_desserts {
@@ -471,10 +478,10 @@ main {
 
             }
         }
-
+      
     }
 
-
+    
 }
 
 footer {

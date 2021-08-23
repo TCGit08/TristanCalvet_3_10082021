@@ -31,7 +31,7 @@ header {
   margin-top: 30px;
   margin-bottom: 20px;
 }
-header__a  i {
+header a  i {
   font-size: 2em;
   padding-right: 100px;
 }
@@ -323,7 +323,7 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .icône_interract
   font-size: 1.5em;
 }
 main .fond_restaurant img {
-  width: 100% height 200px;
+  width: 50% height 200px;
 }
 main .bloc_menu {
   width: 100%;
