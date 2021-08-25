@@ -122,7 +122,26 @@ main .bloc_présentation .button_sub button {
   font-size: 0.9em;
   color: white;
   font-weight: bold;
-  box-shadow: 0px 5px 5px #cfcfcf;
+  box-shadow: 0px 5px 5px lightgrey;
+  position: relative;
+  z-index: 1;
+}
+main .bloc_présentation .button_sub button:hover::after {
+  opacity: 1;
+}
+main .bloc_présentation .button_sub button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 30px 30px 30px 30px;
+  background-color: to top, white, 45%, white;
+  box-shadow: 0px 5px 10px #878787;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
 }
 main .bloc_fonctionnement {
   width: 100%;
@@ -166,6 +185,28 @@ main .bloc_fonctionnement .bloc_fonctions .fonction_choix {
   margin-left: 13px;
   background: #f1f1f1;
   box-shadow: 0px 5px 15px #dbdbdb;
+  position: relative;
+  z-index: 1;
+}
+main .bloc_fonctionnement .bloc_fonctions .fonction_choix:hover::after {
+  opacity: 1;
+}
+main .bloc_fonctionnement .bloc_fonctions .fonction_choix::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 25px 25px 25px 25px;
+  background-color: #ffdaf5;
+  box-shadow: 0px 5px 10px #878787;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+}
+main .bloc_fonctionnement .bloc_fonctions .fonction_choix:hover i {
+  color: #9356DC;
 }
 @media (min-width: 1040px) {
   main .bloc_fonctionnement .bloc_fonctions .fonction_choix {
@@ -294,7 +335,7 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaura
   font-size: 0.8em;
   font-weight: bold;
   color: #1e8f74;
-  background-color: #7cd4be;
+  background-color: #99E2D0;
   border-radius: 2px;
 }
 @media (min-width: 1080px) {
@@ -326,12 +367,25 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .icône_interract
   font-size: 1em;
   font-weight: 100;
   position: relative;
-  z-index: 2;
   left: 85%;
   bottom: 75px;
 }
 main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .icône_interract i {
   font-size: 1.5em;
+}
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .icône_interract .heart_start {
+  position: absolute;
+  color: black;
+}
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .icône_interract .heart_checked {
+  position: relative;
+  bottom: 0px;
+  color: #9356DC;
+  opacity: 0;
+  transition: opacity 250ms;
+}
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .icône_interract .heart_checked:focus {
+  opacity: 1;
 }
 main .fond_restaurant {
   height: 240px;
@@ -602,22 +656,41 @@ main .fond_restaurant img {
   color: #99E2D0;
   padding: 2px 3px 2px 3px;
 }
-.bloc_menu .commande_button {
-  width: 218px;
-  height: 48px;
-  padding-top: 9px;
-  padding-bottom: 19px;
+.bloc_menu .button_commande {
+  width: 219px;
+  height: 49px;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
-.bloc_menu .commande_button button {
-  width: 180px;
-  padding: 14px 15px 15px 13px;
-  background: linear-gradient(to top, #9355DC, 45%, #FF79DA);
+.bloc_menu .button_commande button {
+  width: 220px;
+  padding: 15px 15px 15px 13px;
+  background: linear-gradient(to top, #9356DC, 45%, #FF79DA);
   border: transparent;
-  border-radius: 29px 30px 30px 30px;
-  font-size: 1em;
+  border-radius: 30px 30px 30px 30px;
+  font-size: 0.9em;
   color: white;
   font-weight: bold;
-  box-shadow: 1px 5px 5px #cfcfcf;
+  box-shadow: 0px 5px 5px lightgrey;
+  position: relative;
+  z-index: 1;
+}
+.bloc_menu .button_commande button:hover::after {
+  opacity: 1;
+}
+.bloc_menu .button_commande button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 30px 30px 30px 30px;
+  background-color: to top, white, 45%, white;
+  box-shadow: 0px 5px 10px #878787;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
 }
 
 footer {
