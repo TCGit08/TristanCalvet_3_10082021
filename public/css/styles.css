@@ -362,30 +362,30 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaura
   font-weight: 300;
   padding-top: 3px;
 }
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .icône_interract {
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_start {
   width: 30px;
-  font-size: 1em;
   font-weight: 100;
-  position: relative;
   left: 85%;
   bottom: 75px;
-}
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .icône_interract i {
   font-size: 1.5em;
-}
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .icône_interract .heart_start {
-  position: absolute;
-  color: black;
-}
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .icône_interract .heart_checked {
   position: relative;
-  bottom: 0px;
-  color: #9356DC;
-  opacity: 0;
-  transition: opacity 250ms;
+  z-index: 1;
+  color: black;
+  background: white;
 }
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .icône_interract .heart_checked:focus {
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_start:hover::after {
   opacity: 1;
+}
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_start::after {
+  content: "...";
+  position: absolute;
+  z-index: -1;
+  background: linear-gradient(to top, #9356DC, 45%, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  color: red;
+  transition: opacity 800ms ease-in-out;
 }
 main .fond_restaurant {
   height: 240px;

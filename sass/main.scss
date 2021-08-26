@@ -421,38 +421,38 @@ main {
                         }
                     }
                 }
-
-                .icône_interract{
+                
+                .heart_start {
                     width: 30px;
-                    font-size: 1.0em;
                     font-weight: 100;
-                    position: relative;
-                   
                     left: 85%;
-                    bottom: 75px;                  
-
-                    i {
-                        font-size: 1.5em;
-                    }
-
-                    .heart_start {
-                        position: absolute;
-                        color: black;
-                    }
-
-                    .heart_checked {
-                        position: relative;
-                        bottom: 0px;
-                        color: $prim-purple;
-                        opacity: 0;
-                        transition: opacity 250ms;
-
-                        &:focus { 
-                            opacity: 1;
-                        }
+                    bottom: 75px;
+                    font-size: 1.5em;
+                    position: relative;
+                    z-index: 1;
+                    color: black;
+                    background:white;                     
                         
+                    &:hover {
+                       &::after {
+                           opacity: 1;
+                       }
                     }
 
+                    &::after {
+                        content: "...";
+                        position: absolute;
+                        z-index: -1;
+                        background: linear-gradient(to top, $prim-purple, 45%, $second-pink);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        opacity: 0;
+                        color: red;                            
+                        transition: opacity 800ms ease-in-out;
+                    }
+                        
+                                     
+                       
                 }
             }                              
         }
