@@ -24,64 +24,18 @@ body h5 {
   margin-bottom: 0px;
 }
 
-.loader {
-  width: 100%;
-  height: 250px;
-  background-color: white;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-.loader .loading_text {
-  height: 25px;
-  font-size: 2em;
-  font-family: "Shrikhand", cursive;
-  color: #481a7f;
-  margin-top: 120px;
-  padding-top: 0px;
-  background-color: transparent;
-  text-align: center;
-  position: absolute;
-  z-index: 1;
-}
-.loader .loading_spinner {
-  position: relative;
-  margin-top: 10px;
-  background-color: #ffdff6;
-  color: #fface8;
-  display: inline-block;
-  text-align: center;
-  width: 260px;
-  height: 260px;
-  border: 2px solid #FF79DA;
-  border-top: 6px solid;
-  border-radius: 50%;
-  border-top-color: #481a7f;
-  animation: spin 1s ease-in-out infinite;
-  -webkit-animation: spin 1.1s ease-in-out infinite;
-}
-@keyframes spin {
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes spin {
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
 header {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 0px;
   margin-bottom: 0px;
 }
 header a {
   width: 40px;
   padding-left: 20px;
+  margin-top: 30px;
 }
 header a i {
   width: 100%;
@@ -90,6 +44,7 @@ header a i {
 }
 header .logo {
   width: 90%;
+  padding-top: 30px;
   display: flex;
   justify-content: center;
 }
@@ -97,7 +52,65 @@ header .logo img {
   width: 50%;
 }
 
-main .form_localisation {
+main {
+  /*Animation Loading spinner */
+}
+main .loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: visible;
+  background: white;
+  animation: loading-animation 0s 2000ms forwards;
+}
+main .loader .loading_text {
+  font-size: 2.2em;
+  font-family: "Shrikhand", cursive;
+  color: #481a7f;
+  position: absolute;
+}
+main .loader .loading_spinner {
+  display: block;
+  position: relative;
+  background-color: #ffdff6;
+  color: #fface8;
+  width: 260px;
+  height: 260px;
+  border: 2px solid #FF79DA;
+  border-top: 6px solid;
+  border-radius: 50%;
+  border-top-color: #481a7f;
+  animation: spin 1s ease-in-out infinite;
+}
+main .loader .loading_spinner::before, main .loader .loading_spinner::after {
+  content: "...";
+  position: absolute;
+  border-radius: 50%;
+  border: 5px solid transparent;
+}
+@keyframes loading-animation {
+  to {
+    visibility: hidden;
+    display: none;
+  }
+}
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+main .loader .form_localisation {
   width: 100%;
   background: linear-gradient(to bottom, darkgrey, 2%, #f3f3f3);
   border-top: solid 1px darkgrey;
@@ -106,19 +119,19 @@ main .form_localisation {
   padding: 20px 0px 20px 0px;
   margin-top: 20px;
 }
-main .form_localisation form {
+main .loader .form_localisation form {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 90%;
   margin-left: 90px;
 }
-main .form_localisation form i {
+main .loader .form_localisation form i {
   font-size: 1.2em;
   padding-left: 0px;
   padding-right: 10px;
 }
-main .form_localisation form input {
+main .loader .form_localisation form input {
   font-size: 1.1em;
   font-weight: 400;
   color: black;
@@ -128,7 +141,7 @@ main .form_localisation form input {
   background: transparent;
   padding-left: 15px;
 }
-main .bloc_présentation {
+main .loader .bloc_présentation {
   width: 100%;
   padding-top: 20px;
   padding-bottom: 80px;
@@ -139,14 +152,14 @@ main .bloc_présentation {
   align-items: center;
   background: #f8f8f8;
 }
-main .bloc_présentation h1 {
+main .loader .bloc_présentation h1 {
   font-size: 1.5em;
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
   margin-bottom: 0%;
 }
-main .bloc_présentation p {
+main .loader .bloc_présentation p {
   font-size: 1em;
   color: black;
   text-align: center;
@@ -154,13 +167,13 @@ main .bloc_présentation p {
   padding-right: 30px;
   font-weight: 300;
 }
-main .bloc_présentation .button_sub {
+main .loader .bloc_présentation .button_sub {
   width: 219px;
   height: 49px;
   padding-top: 10px;
   padding-bottom: 20px;
 }
-main .bloc_présentation .button_sub button {
+main .loader .bloc_présentation .button_sub button {
   width: 220px;
   padding: 15px 15px 15px 13px;
   background: linear-gradient(to top, #9356DC, 45%, #FF79DA);
@@ -173,10 +186,10 @@ main .bloc_présentation .button_sub button {
   position: relative;
   z-index: 1;
 }
-main .bloc_présentation .button_sub button:hover::after {
+main .loader .bloc_présentation .button_sub button:hover::after {
   opacity: 1;
 }
-main .bloc_présentation .button_sub button::after {
+main .loader .bloc_présentation .button_sub button::after {
   content: "";
   position: absolute;
   top: 0;
@@ -190,15 +203,15 @@ main .bloc_présentation .button_sub button::after {
   z-index: -1;
   transition: opacity 250ms;
 }
-main .bloc_fonctionnement {
+main .loader .bloc_fonctionnement {
   width: 100%;
 }
-main .bloc_fonctionnement h2 {
+main .loader .bloc_fonctionnement h2 {
   font-size: 1.5em;
   padding-left: 20px;
   padding-bottom: 10px;
 }
-main .bloc_fonctionnement .bloc_fonctions {
+main .loader .bloc_fonctionnement .bloc_fonctions {
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
@@ -207,23 +220,23 @@ main .bloc_fonctionnement .bloc_fonctions {
   flex-direction: column;
 }
 @media (min-width: 480px) and (max-width: 1039px) {
-  main .bloc_fonctionnement .bloc_fonctions {
+  main .loader .bloc_fonctionnement .bloc_fonctions {
     justify-content: center;
     align-items: center;
   }
 }
 @media (min-width: 1040px) {
-  main .bloc_fonctionnement .bloc_fonctions {
+  main .loader .bloc_fonctionnement .bloc_fonctions {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
   }
 }
-main .bloc_fonctionnement .bloc_fonctions a {
+main .loader .bloc_fonctionnement .bloc_fonctions a {
   width: 320px;
   margin-bottom: 30px;
 }
-main .bloc_fonctionnement .bloc_fonctions .fonction_choix {
+main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix {
   align-items: center;
   width: 320px;
   display: flex;
@@ -235,10 +248,10 @@ main .bloc_fonctionnement .bloc_fonctions .fonction_choix {
   position: relative;
   z-index: 1;
 }
-main .bloc_fonctionnement .bloc_fonctions .fonction_choix:hover::after {
+main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix:hover::after {
   opacity: 1;
 }
-main .bloc_fonctionnement .bloc_fonctions .fonction_choix::after {
+main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix::after {
   content: "";
   position: absolute;
   top: 0;
@@ -252,16 +265,16 @@ main .bloc_fonctionnement .bloc_fonctions .fonction_choix::after {
   z-index: -1;
   transition: opacity 250ms;
 }
-main .bloc_fonctionnement .bloc_fonctions .fonction_choix:hover i {
+main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix:hover i {
   color: #9356DC;
 }
 @media (min-width: 1040px) {
-  main .bloc_fonctionnement .bloc_fonctions .fonction_choix {
+  main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix {
     padding-right: 10px;
     width: 300px;
   }
 }
-main .bloc_fonctionnement .bloc_fonctions .fonction_choix span {
+main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix span {
   font-size: 0.8em;
   background: #9356DC;
   color: white;
@@ -270,14 +283,14 @@ main .bloc_fonctionnement .bloc_fonctions .fonction_choix span {
   position: relative;
   right: 13px;
 }
-main .bloc_fonctionnement .bloc_fonctions .fonction_choix i {
+main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix i {
   font-size: 1.2em;
   color: grey;
   position: absolute;
   padding-left: 35px;
   justify-content: center;
 }
-main .bloc_fonctionnement .bloc_fonctions .fonction_choix p {
+main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix p {
   width: 100%;
   font-size: 1em;
   color: black;
@@ -286,11 +299,11 @@ main .bloc_fonctionnement .bloc_fonctions .fonction_choix p {
   font-weight: 500;
 }
 @media (min-width: 1040px) {
-  main .bloc_fonctionnement .bloc_fonctions .fonction_choix p {
+  main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix p {
     font-size: 0.9em;
   }
 }
-main .bloc_restaurant {
+main .loader .bloc_restaurant {
   width: 100%;
   background: #f1f1f1;
   display: flex;
@@ -298,32 +311,32 @@ main .bloc_restaurant {
   justify-content: center;
   padding-bottom: 50px;
 }
-main .bloc_restaurant h2 {
+main .loader .bloc_restaurant h2 {
   font-size: 1.5em;
   padding-top: 35px;
   padding-bottom: 10px;
   padding-left: 20px;
   margin-bottom: 0px;
 }
-main .bloc_restaurant .bloc_carte_restaurant {
+main .loader .bloc_restaurant .bloc_carte_restaurant {
   width: 100%;
 }
 @media (min-width: 1080px) {
-  main .bloc_restaurant .bloc_carte_restaurant {
+  main .loader .bloc_restaurant .bloc_carte_restaurant {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
 }
 @media (min-width: 650px) and (max-width: 1079px) {
-  main .bloc_restaurant .bloc_carte_restaurant {
+  main .loader .bloc_restaurant .bloc_carte_restaurant {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 }
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur {
+main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur {
   height: 270px;
   position: relative;
   z-index: 1;
@@ -331,18 +344,18 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur {
   padding-right: 20px;
 }
 @media (min-width: 650px) and (max-width: 1079px) {
-  main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur {
+  main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur {
     justify-content: center;
     width: 65%;
   }
 }
 @media (min-width: 1080px) {
-  main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur {
+  main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur {
     width: calc(97%/4);
     font-size: 0.9em;
   }
 }
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a {
+main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a {
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
@@ -350,7 +363,7 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a {
   color: #000;
   border-radius: 20px 20px 20px 20px;
 }
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant {
+main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant {
   background: white;
   width: 100%;
   height: 240px;
@@ -358,10 +371,10 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaura
   border-radius: 20px 20px 20px 20px;
   box-shadow: 0px 10px 15px #dbdbdb;
 }
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new {
+main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new {
   height: 160px;
 }
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new img {
+main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new img {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -370,7 +383,7 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaura
   border: 0px solid transparent;
   border-radius: 20px 20px 0px 0px;
 }
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new p {
+main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new p {
   width: 70px;
   position: relative;
   margin-top: 0px;
@@ -386,30 +399,30 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaura
   border-radius: 2px;
 }
 @media (min-width: 1080px) {
-  main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new p {
+  main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new p {
     left: 60%;
   }
 }
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description {
+main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description {
   display: flex;
   height: 50px;
   padding-top: 15px;
   padding-bottom: 20px;
 }
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description .carte_texte {
+main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description .carte_texte {
   width: 80%;
   padding-left: 10px;
   padding-bottom: 0px;
 }
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description .carte_texte h3 {
+main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description .carte_texte h3 {
   font-weight: bold;
 }
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description .carte_texte h4 {
+main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description .carte_texte h4 {
   font-size: 1em;
   font-weight: 300;
   padding-top: 3px;
 }
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_start {
+main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_start {
   width: 30px;
   font-weight: 100;
   left: 85%;
@@ -420,10 +433,10 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_start {
   color: black;
   background: white;
 }
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_start:hover::after {
+main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_start:hover::after {
   opacity: 1;
 }
-main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_start::after {
+main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_start::after {
   content: "...";
   position: absolute;
   z-index: -1;
@@ -434,16 +447,15 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_start::aft
   color: red;
   transition: opacity 800ms ease-in-out;
 }
-main .fond_restaurant {
+main .loader .fond_restaurant {
   height: 240px;
   position: relative;
   top: 30px;
 }
-main .fond_restaurant img {
+main .loader .fond_restaurant img {
   width: 100%;
 }
-
-.bloc_menu {
+main .bloc_menu {
   width: 100%;
   background: #f1f1f1;
   border: 1px solid transparent;
@@ -454,7 +466,7 @@ main .fond_restaurant img {
   flex-direction: column;
   align-items: center;
 }
-.bloc_menu .nom_restaurant {
+main .bloc_menu .nom_restaurant {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -462,29 +474,29 @@ main .fond_restaurant img {
   justify-content: space-between;
   padding-top: 20px;
 }
-.bloc_menu .nom_restaurant h1 {
+main .bloc_menu .nom_restaurant h1 {
   font-size: 1.6em;
   font-family: "Shrikhand", cursive;
 }
 @media (min-width: 730px) and (max-width: 2000px) {
-  .bloc_menu .nom_restaurant {
+  main .bloc_menu .nom_restaurant {
     font-size: 1.4em;
   }
 }
-.bloc_menu .nom_restaurant i {
+main .bloc_menu .nom_restaurant i {
   font-size: 1.7em;
   padding-right: 10px;
 }
 @media (min-width: 730px) and (max-width: 2000px) {
-  .bloc_menu .nom_restaurant i {
+  main .bloc_menu .nom_restaurant i {
     font-size: 1.5em;
   }
 }
-.bloc_menu .bloc_entrées {
+main .bloc_menu .bloc_entrées {
   width: 100%;
 }
 @media (min-width: 730px) and (max-width: 2000px) {
-  .bloc_menu .bloc_entrées {
+  main .bloc_menu .bloc_entrées {
     width: 75%;
     display: flex;
     flex-direction: column;
@@ -492,19 +504,19 @@ main .fond_restaurant img {
     justify-content: center;
   }
 }
-.bloc_menu .bloc_entrées h2 {
+main .bloc_menu .bloc_entrées h2 {
   width: 10%;
   font-size: 1em;
   font-weight: 300;
   border-bottom: 3px solid #99E2D0;
 }
 @media (min-width: 730px) and (max-width: 2000px) {
-  .bloc_menu .bloc_entrées h2 {
+  main .bloc_menu .bloc_entrées h2 {
     font-size: 1.5em;
     font-weight: 400;
   }
 }
-.bloc_menu .bloc_entrées .menu_proposition {
+main .bloc_menu .bloc_entrées .menu_proposition {
   height: 75px;
   background: white;
   border: 1px solid transparent;
@@ -517,48 +529,48 @@ main .fond_restaurant img {
   justify-content: space-between;
 }
 @media (min-width: 730px) and (max-width: 2000px) {
-  .bloc_menu .bloc_entrées .menu_proposition {
+  main .bloc_menu .bloc_entrées .menu_proposition {
     width: 650px;
   }
 }
-.bloc_menu .bloc_entrées .menu_proposition .menu_text h3 {
+main .bloc_menu .bloc_entrées .menu_proposition .menu_text h3 {
   font-size: 1.1em;
   padding-bottom: 5px;
 }
-.bloc_menu .bloc_entrées .menu_proposition .menu_text h4 {
+main .bloc_menu .bloc_entrées .menu_proposition .menu_text h4 {
   font-size: 0.9em;
   font-weight: 300;
 }
-.bloc_menu .bloc_entrées .menu_proposition .prix-check {
+main .bloc_menu .bloc_entrées .menu_proposition .prix-check {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.bloc_menu .bloc_entrées .menu_proposition .prix-check p {
+main .bloc_menu .bloc_entrées .menu_proposition .prix-check p {
   font-weight: bold;
   padding-top: 25px;
   padding-right: 10px;
 }
-.bloc_menu .bloc_entrées .menu_proposition .prix-check .menu_check {
+main .bloc_menu .bloc_entrées .menu_proposition .prix-check .menu_check {
   padding: 27px 20px 26px 20px;
   background: #99E2D0;
   border-radius: 0px 20px 20px 0px;
 }
-.bloc_menu .bloc_entrées .menu_proposition .prix-check .menu_check .check {
+main .bloc_menu .bloc_entrées .menu_proposition .prix-check .menu_check .check {
   padding: 2px;
   border-radius: 20px;
   background: white;
 }
-.bloc_menu .bloc_entrées .menu_proposition .prix-check .menu_check .check i {
+main .bloc_menu .bloc_entrées .menu_proposition .prix-check .menu_check .check i {
   font-size: 0.8em;
   color: #99E2D0;
   padding: 2px 3px 2px 3px;
 }
-.bloc_menu .bloc_plats {
+main .bloc_menu .bloc_plats {
   width: 100%;
 }
 @media (min-width: 730px) and (max-width: 2000px) {
-  .bloc_menu .bloc_plats {
+  main .bloc_menu .bloc_plats {
     width: 75%;
     display: flex;
     flex-direction: column;
@@ -566,7 +578,7 @@ main .fond_restaurant img {
     justify-content: center;
   }
 }
-.bloc_menu .bloc_plats h2 {
+main .bloc_menu .bloc_plats h2 {
   width: 10%;
   font-size: 1em;
   font-weight: 300;
@@ -574,12 +586,12 @@ main .fond_restaurant img {
   border-bottom: 3px solid #99E2D0;
 }
 @media (min-width: 730px) and (max-width: 2000px) {
-  .bloc_menu .bloc_plats h2 {
+  main .bloc_menu .bloc_plats h2 {
     font-size: 1.5em;
     font-weight: 600;
   }
 }
-.bloc_menu .bloc_plats .menu_proposition {
+main .bloc_menu .bloc_plats .menu_proposition {
   height: 75px;
   background: white;
   border: 1px solid transparent;
@@ -592,55 +604,55 @@ main .fond_restaurant img {
   justify-content: space-between;
 }
 @media (min-width: 730px) and (max-width: 2000px) {
-  .bloc_menu .bloc_plats .menu_proposition {
+  main .bloc_menu .bloc_plats .menu_proposition {
     width: 650px;
   }
 }
-.bloc_menu .bloc_plats .menu_proposition .menu_text h3 {
+main .bloc_menu .bloc_plats .menu_proposition .menu_text h3 {
   font-size: 1.1em;
   padding-bottom: 5px;
 }
-.bloc_menu .bloc_plats .menu_proposition .menu_text h4 {
+main .bloc_menu .bloc_plats .menu_proposition .menu_text h4 {
   font-size: 0.9em;
   font-weight: 300;
 }
-.bloc_menu .bloc_plats .menu_proposition .prix-check {
+main .bloc_menu .bloc_plats .menu_proposition .prix-check {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.bloc_menu .bloc_plats .menu_proposition .prix-check p {
+main .bloc_menu .bloc_plats .menu_proposition .prix-check p {
   font-weight: bold;
   padding-top: 25px;
   padding-right: 10px;
 }
-.bloc_menu .bloc_plats .menu_proposition .prix-check .menu_check {
+main .bloc_menu .bloc_plats .menu_proposition .prix-check .menu_check {
   padding: 27px 20px 26px 20px;
   background: #99E2D0;
   border-radius: 0px 20px 20px 0px;
 }
-.bloc_menu .bloc_plats .menu_proposition .prix-check .menu_check .check {
+main .bloc_menu .bloc_plats .menu_proposition .prix-check .menu_check .check {
   padding: 2px;
   border-radius: 20px;
   background: white;
 }
-.bloc_menu .bloc_plats .menu_proposition .prix-check .menu_check .check i {
+main .bloc_menu .bloc_plats .menu_proposition .prix-check .menu_check .check i {
   font-size: 0.8em;
   color: #99E2D0;
   padding: 2px 3px 2px 3px;
 }
-.bloc_menu .bloc_desserts {
+main .bloc_menu .bloc_desserts {
   width: 100%;
 }
 @media (min-width: 730px) and (max-width: 2000px) {
-  .bloc_menu .bloc_desserts {
+  main .bloc_menu .bloc_desserts {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 }
-.bloc_menu .bloc_desserts h2 {
+main .bloc_menu .bloc_desserts h2 {
   width: 10%;
   font-size: 1em;
   margin-top: 40px;
@@ -648,12 +660,12 @@ main .fond_restaurant img {
   border-bottom: 3px solid #99E2D0;
 }
 @media (min-width: 730px) and (max-width: 2000px) {
-  .bloc_menu .bloc_desserts h2 {
+  main .bloc_menu .bloc_desserts h2 {
     font-size: 1.5em;
     font-weight: 600;
   }
 }
-.bloc_menu .bloc_desserts .menu_proposition {
+main .bloc_menu .bloc_desserts .menu_proposition {
   height: 75px;
   background: white;
   border: 1px solid transparent;
@@ -666,50 +678,50 @@ main .fond_restaurant img {
   justify-content: space-between;
 }
 @media (min-width: 730px) and (max-width: 2000px) {
-  .bloc_menu .bloc_desserts .menu_proposition {
+  main .bloc_menu .bloc_desserts .menu_proposition {
     width: 650px;
   }
 }
-.bloc_menu .bloc_desserts .menu_proposition .menu_text h3 {
+main .bloc_menu .bloc_desserts .menu_proposition .menu_text h3 {
   font-size: 1.1em;
   padding-bottom: 5px;
 }
-.bloc_menu .bloc_desserts .menu_proposition .menu_text h4 {
+main .bloc_menu .bloc_desserts .menu_proposition .menu_text h4 {
   font-size: 0.9em;
   font-weight: 300;
 }
-.bloc_menu .bloc_desserts .menu_proposition .prix-check {
+main .bloc_menu .bloc_desserts .menu_proposition .prix-check {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.bloc_menu .bloc_desserts .menu_proposition .prix-check p {
+main .bloc_menu .bloc_desserts .menu_proposition .prix-check p {
   font-weight: bold;
   padding-top: 25px;
   padding-right: 10px;
 }
-.bloc_menu .bloc_desserts .menu_proposition .prix-check .menu_check {
+main .bloc_menu .bloc_desserts .menu_proposition .prix-check .menu_check {
   padding: 27px 20px 26px 20px;
   background: #99E2D0;
   border-radius: 0px 20px 20px 0px;
 }
-.bloc_menu .bloc_desserts .menu_proposition .prix-check .menu_check .check {
+main .bloc_menu .bloc_desserts .menu_proposition .prix-check .menu_check .check {
   padding: 2px;
   border-radius: 20px;
   background: white;
 }
-.bloc_menu .bloc_desserts .menu_proposition .prix-check .menu_check .check i {
+main .bloc_menu .bloc_desserts .menu_proposition .prix-check .menu_check .check i {
   font-size: 0.8em;
   color: #99E2D0;
   padding: 2px 3px 2px 3px;
 }
-.bloc_menu .button_commande {
+main .bloc_menu .button_commande {
   width: 219px;
   height: 49px;
   padding-top: 10px;
   padding-bottom: 20px;
 }
-.bloc_menu .button_commande button {
+main .bloc_menu .button_commande button {
   width: 220px;
   padding: 15px 15px 15px 13px;
   background: linear-gradient(to top, #9356DC, 45%, #FF79DA);
@@ -722,10 +734,10 @@ main .fond_restaurant img {
   position: relative;
   z-index: 1;
 }
-.bloc_menu .button_commande button:hover::after {
+main .bloc_menu .button_commande button:hover::after {
   opacity: 1;
 }
-.bloc_menu .button_commande button::after {
+main .bloc_menu .button_commande button::after {
   content: "";
   position: absolute;
   top: 0;
