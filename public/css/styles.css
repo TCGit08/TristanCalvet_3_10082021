@@ -110,7 +110,7 @@ main .loader .loading_spinner::before, main .loader .loading_spinner::after {
     transform: rotate(360deg);
   }
 }
-main .loader .form_localisation {
+main .form_localisation {
   width: 100%;
   background: linear-gradient(to bottom, darkgrey, 2%, #f3f3f3);
   border-top: solid 1px darkgrey;
@@ -119,19 +119,19 @@ main .loader .form_localisation {
   padding: 20px 0px 20px 0px;
   margin-top: 20px;
 }
-main .loader .form_localisation form {
+main .form_localisation form {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 90%;
   margin-left: 90px;
 }
-main .loader .form_localisation form i {
+main .form_localisation form i {
   font-size: 1.2em;
   padding-left: 0px;
   padding-right: 10px;
 }
-main .loader .form_localisation form input {
+main .form_localisation form input {
   font-size: 1.1em;
   font-weight: 400;
   color: black;
@@ -141,7 +141,7 @@ main .loader .form_localisation form input {
   background: transparent;
   padding-left: 15px;
 }
-main .loader .bloc_présentation {
+main .bloc_présentation {
   width: 100%;
   padding-top: 20px;
   padding-bottom: 80px;
@@ -152,14 +152,14 @@ main .loader .bloc_présentation {
   align-items: center;
   background: #f8f8f8;
 }
-main .loader .bloc_présentation h1 {
+main .bloc_présentation h1 {
   font-size: 1.5em;
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
   margin-bottom: 0%;
 }
-main .loader .bloc_présentation p {
+main .bloc_présentation p {
   font-size: 1em;
   color: black;
   text-align: center;
@@ -167,13 +167,13 @@ main .loader .bloc_présentation p {
   padding-right: 30px;
   font-weight: 300;
 }
-main .loader .bloc_présentation .button_sub {
+main .bloc_présentation .button_sub {
   width: 219px;
   height: 49px;
   padding-top: 10px;
   padding-bottom: 20px;
 }
-main .loader .bloc_présentation .button_sub button {
+main .bloc_présentation .button_sub button {
   width: 220px;
   padding: 15px 15px 15px 13px;
   background: linear-gradient(to top, #9356DC, 45%, #FF79DA);
@@ -186,10 +186,10 @@ main .loader .bloc_présentation .button_sub button {
   position: relative;
   z-index: 1;
 }
-main .loader .bloc_présentation .button_sub button:hover::after {
+main .bloc_présentation .button_sub button:hover::after {
   opacity: 1;
 }
-main .loader .bloc_présentation .button_sub button::after {
+main .bloc_présentation .button_sub button::after {
   content: "";
   position: absolute;
   top: 0;
@@ -203,15 +203,15 @@ main .loader .bloc_présentation .button_sub button::after {
   z-index: -1;
   transition: opacity 250ms;
 }
-main .loader .bloc_fonctionnement {
+main .bloc_fonctionnement {
   width: 100%;
 }
-main .loader .bloc_fonctionnement h2 {
+main .bloc_fonctionnement h2 {
   font-size: 1.5em;
   padding-left: 20px;
   padding-bottom: 10px;
 }
-main .loader .bloc_fonctionnement .bloc_fonctions {
+main .bloc_fonctionnement .bloc_fonctions {
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
@@ -220,23 +220,23 @@ main .loader .bloc_fonctionnement .bloc_fonctions {
   flex-direction: column;
 }
 @media (min-width: 480px) and (max-width: 1039px) {
-  main .loader .bloc_fonctionnement .bloc_fonctions {
+  main .bloc_fonctionnement .bloc_fonctions {
     justify-content: center;
     align-items: center;
   }
 }
 @media (min-width: 1040px) {
-  main .loader .bloc_fonctionnement .bloc_fonctions {
+  main .bloc_fonctionnement .bloc_fonctions {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
   }
 }
-main .loader .bloc_fonctionnement .bloc_fonctions a {
+main .bloc_fonctionnement .bloc_fonctions a {
   width: 320px;
   margin-bottom: 30px;
 }
-main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix {
+main .bloc_fonctionnement .bloc_fonctions .fonction_choix {
   align-items: center;
   width: 320px;
   display: flex;
@@ -248,10 +248,10 @@ main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix {
   position: relative;
   z-index: 1;
 }
-main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix:hover::after {
+main .bloc_fonctionnement .bloc_fonctions .fonction_choix:hover::after {
   opacity: 1;
 }
-main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix::after {
+main .bloc_fonctionnement .bloc_fonctions .fonction_choix::after {
   content: "";
   position: absolute;
   top: 0;
@@ -265,16 +265,16 @@ main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix::after {
   z-index: -1;
   transition: opacity 250ms;
 }
-main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix:hover i {
+main .bloc_fonctionnement .bloc_fonctions .fonction_choix:hover i {
   color: #9356DC;
 }
 @media (min-width: 1040px) {
-  main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix {
+  main .bloc_fonctionnement .bloc_fonctions .fonction_choix {
     padding-right: 10px;
     width: 300px;
   }
 }
-main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix span {
+main .bloc_fonctionnement .bloc_fonctions .fonction_choix span {
   font-size: 0.8em;
   background: #9356DC;
   color: white;
@@ -283,14 +283,14 @@ main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix span {
   position: relative;
   right: 13px;
 }
-main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix i {
+main .bloc_fonctionnement .bloc_fonctions .fonction_choix i {
   font-size: 1.2em;
   color: grey;
   position: absolute;
   padding-left: 35px;
   justify-content: center;
 }
-main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix p {
+main .bloc_fonctionnement .bloc_fonctions .fonction_choix p {
   width: 100%;
   font-size: 1em;
   color: black;
@@ -299,11 +299,11 @@ main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix p {
   font-weight: 500;
 }
 @media (min-width: 1040px) {
-  main .loader .bloc_fonctionnement .bloc_fonctions .fonction_choix p {
+  main .bloc_fonctionnement .bloc_fonctions .fonction_choix p {
     font-size: 0.9em;
   }
 }
-main .loader .bloc_restaurant {
+main .bloc_restaurant {
   width: 100%;
   background: #f1f1f1;
   display: flex;
@@ -311,32 +311,32 @@ main .loader .bloc_restaurant {
   justify-content: center;
   padding-bottom: 50px;
 }
-main .loader .bloc_restaurant h2 {
+main .bloc_restaurant h2 {
   font-size: 1.5em;
   padding-top: 35px;
   padding-bottom: 10px;
   padding-left: 20px;
   margin-bottom: 0px;
 }
-main .loader .bloc_restaurant .bloc_carte_restaurant {
+main .bloc_restaurant .bloc_carte_restaurant {
   width: 100%;
 }
 @media (min-width: 1080px) {
-  main .loader .bloc_restaurant .bloc_carte_restaurant {
+  main .bloc_restaurant .bloc_carte_restaurant {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
 }
 @media (min-width: 650px) and (max-width: 1079px) {
-  main .loader .bloc_restaurant .bloc_carte_restaurant {
+  main .bloc_restaurant .bloc_carte_restaurant {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 }
-main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur {
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur {
   height: 270px;
   position: relative;
   z-index: 1;
@@ -344,18 +344,18 @@ main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur {
   padding-right: 20px;
 }
 @media (min-width: 650px) and (max-width: 1079px) {
-  main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur {
+  main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur {
     justify-content: center;
     width: 65%;
   }
 }
 @media (min-width: 1080px) {
-  main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur {
+  main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur {
     width: calc(97%/4);
     font-size: 0.9em;
   }
 }
-main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a {
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a {
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
@@ -363,7 +363,7 @@ main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a {
   color: #000;
   border-radius: 20px 20px 20px 20px;
 }
-main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant {
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant {
   background: white;
   width: 100%;
   height: 240px;
@@ -371,10 +371,10 @@ main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_
   border-radius: 20px 20px 20px 20px;
   box-shadow: 0px 10px 15px #dbdbdb;
 }
-main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new {
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new {
   height: 160px;
 }
-main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new img {
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new img {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -383,7 +383,7 @@ main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_
   border: 0px solid transparent;
   border-radius: 20px 20px 0px 0px;
 }
-main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new p {
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new p {
   width: 70px;
   position: relative;
   margin-top: 0px;
@@ -399,60 +399,63 @@ main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_
   border-radius: 2px;
 }
 @media (min-width: 1080px) {
-  main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new p {
+  main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new p {
     left: 60%;
   }
 }
-main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description {
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description {
   display: flex;
   height: 50px;
   padding-top: 15px;
   padding-bottom: 20px;
 }
-main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description .carte_texte {
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description .carte_texte {
   width: 80%;
   padding-left: 10px;
   padding-bottom: 0px;
 }
-main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description .carte_texte h3 {
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description .carte_texte h3 {
   font-weight: bold;
 }
-main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description .carte_texte h4 {
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description .carte_texte h4 {
   font-size: 1em;
   font-weight: 300;
   padding-top: 3px;
 }
-main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_start {
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_filling {
   width: 30px;
   font-weight: 100;
   left: 85%;
   bottom: 75px;
   font-size: 1.5em;
   position: relative;
-  z-index: 1;
+  z-index: 10;
   color: black;
-  background: white;
+  background: transparent;
 }
-main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_start:hover::after {
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_filling .heart_filling:hover > .heart_filled {
   opacity: 1;
+  transform: scale(1);
+  z-index: 2;
 }
-main .loader .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_start::after {
-  content: "...";
-  position: absolute;
-  z-index: -1;
+main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_filling .heart_filled {
+  color: #FF79DA;
   background: linear-gradient(to top, #9356DC, 45%, #FF79DA);
-  background-clip: text;
+  background-clip: border-box;
+  -webkit-text-fill-fill-color: transparent;
   -webkit-background-clip: text;
   opacity: 0;
-  color: red;
-  transition: opacity 800ms ease-in-out;
+  transition: all 800ms;
+  transform: scale(0);
+  transform-origin: bottom;
+  position: relative;
 }
-main .loader .fond_restaurant {
+main .fond_restaurant {
   height: 240px;
   position: relative;
   top: 30px;
 }
-main .loader .fond_restaurant img {
+main .fond_restaurant img {
   width: 100%;
 }
 main .bloc_menu {
@@ -533,13 +536,25 @@ main .bloc_menu .bloc_entrées .menu_proposition {
     width: 650px;
   }
 }
+main .bloc_menu .bloc_entrées .menu_proposition .menu_text {
+  width: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 main .bloc_menu .bloc_entrées .menu_proposition .menu_text h3 {
   font-size: 1.1em;
   padding-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 main .bloc_menu .bloc_entrées .menu_proposition .menu_text h4 {
   font-size: 0.9em;
   font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 main .bloc_menu .bloc_entrées .menu_proposition .prix-check {
   display: flex;
@@ -608,13 +623,25 @@ main .bloc_menu .bloc_plats .menu_proposition {
     width: 650px;
   }
 }
+main .bloc_menu .bloc_plats .menu_proposition .menu_text {
+  width: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 main .bloc_menu .bloc_plats .menu_proposition .menu_text h3 {
   font-size: 1.1em;
   padding-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 main .bloc_menu .bloc_plats .menu_proposition .menu_text h4 {
   font-size: 0.9em;
   font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 main .bloc_menu .bloc_plats .menu_proposition .prix-check {
   display: flex;
@@ -681,6 +708,12 @@ main .bloc_menu .bloc_desserts .menu_proposition {
   main .bloc_menu .bloc_desserts .menu_proposition {
     width: 650px;
   }
+}
+main .bloc_menu .bloc_desserts .menu_proposition .menu_text {
+  width: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 main .bloc_menu .bloc_desserts .menu_proposition .menu_text h3 {
   font-size: 1.1em;
