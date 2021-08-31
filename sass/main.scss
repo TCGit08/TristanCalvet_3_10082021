@@ -82,8 +82,8 @@ main {
         align-items: center;
         justify-content: center;
         visibility: visible;
-        background: white;
-        animation: loading-animation 0s 2000ms forwards;
+        background: rgb(248, 248, 248);
+        animation: loading-animation 0s 1800ms forwards;
 
         .loading_text {        
             font-size: 2.2em;
@@ -501,26 +501,32 @@ main {
                     color: black;
                     background:transparent;                     
                         
-                    .heart_filling:hover>.heart_filled {
-                    opacity: 1;
-                    transform: scale(1);
-                    z-index: 2;
+                    &:hover>.heart_filled {
+                        opacity: 1;
+                        transform: scale(0.8);
+                        z-index: 12;
                     }
                         
                     .heart_filled {
-                    color: $second-pink;
-                    background: linear-gradient(to top, $prim-purple, 45%, $second-pink);
-                    background-clip: border-box;
-                    -webkit-text-fill-fill-color: transparent;
-                    -webkit-background-clip: text;
-                    opacity: 0;
-                    transition: all 800ms;
-                    transform: scale(0);
-                    transform-origin: bottom;
-                    position: relative;
+                        color: $second-pink;
+                        background: linear-gradient(to top, $prim-purple, 45%, $second-pink);
+                        background-clip: border-box;
+                        -webkit-text-fill-color: transparent;
+                        -webkit-background-clip: text;
+                        opacity: 0;
+                        transition: all 800ms;
+                        transform: scale(0);
+                        transform-origin: bottom;
+                        position: relative;
+                        bottom: 32px;
+
+                        @media (min-width: 1080px){
+                            bottom: 29px;
+                            left: 0.2px
+                        }
                     }                              
-                }                              
-        }
+                }                                              
+            }
     }
 }   
     
@@ -567,16 +573,42 @@ main {
                     font-size: 1.4em;
                 }
 
-            i {
-                font-size: 1.7em;
-                padding-right: 10px;
+            .heart_filling {
+                    width: 50px;
+                    font-weight: 400;
+                    left: 0%;
+                    bottom: -15px;
+                    font-size: 1.7em;
+                    position: relative;
+                    z-index: 10;
+                    color: black;
+                    background:transparent;                     
+                        
+                    &:hover>.heart_filled {
+                        opacity: 1;
+                        transform: scale(0.8);
+                        z-index: 12;
+                    }
+                        
+                    .heart_filled {
+                        color: $second-pink;
+                        background: linear-gradient(to top, $prim-purple, 45%, $second-pink);
+                        background-clip: border-box;
+                        -webkit-text-fill-color: transparent;
+                        -webkit-background-clip: text;
+                        opacity: 0;
+                        transition: all 500ms;
+                        transform: scale(0);
+                        transform-origin: bottom;
+                        position: relative;
+                        bottom: 35.25px;
 
-                @media (min-width: 730px) and (max-width: 2000px) {
-                    font-size: 1.5em;
-                    
+                        @media (min-width: 730px) and (max-width: 2000px) {
+                            bottom: 50px;
+                            left: 0.2px
+                        }
+                    }                              
                 }
-
-            }
 
         }
 
@@ -606,7 +638,7 @@ main {
             }
 
             .menu_proposition {
-                height: 75px;
+                height: 80px;
                 background: white;
                 border: 1px solid transparent;
                 border-radius: 20px 20px 20px 20px;
@@ -619,7 +651,7 @@ main {
 
                 @media (min-width: 730px) and (max-width: 2000px) {
                     
-                    width: 650px;
+                    width: 690px;
 
                 }
 
@@ -635,6 +667,11 @@ main {
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
+
+                        @media (min-width: 730px) and (max-width: 2000px) {
+                            font-size: 1.3em;
+                        }
+
                     }
                 
                     h4{
@@ -643,8 +680,14 @@ main {
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
+
+                        @media (min-width: 730px) and (max-width: 2000px) {
+                            font-size: 1.1em;
+                        }
+
                     }
                 }
+
                 .prix-check{
                     display: flex;
                     flex-direction: row;
@@ -706,7 +749,7 @@ main {
             }
 
             .menu_proposition {
-                height: 75px;
+                height: 80px;
                 background: white;
                 border: 1px solid transparent;
                 border-radius: 20px 20px 20px 20px;
@@ -719,7 +762,7 @@ main {
 
                 @media (min-width: 730px) and (max-width: 2000px) {
                     
-                    width: 650px;
+                    width: 690px;
 
                 }
 
@@ -736,16 +779,27 @@ main {
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
+
+                        @media (min-width: 730px) and (max-width: 2000px) {
+                            font-size: 1.3em;
+                        }
+
                     }
-                
+                                
                     h4{
                         font-size: 0.9em;
                         font-weight: 300;
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
+
+                        @media (min-width: 730px) and (max-width: 2000px) {
+                            font-size: 1.1em;
+                        }
+
                     }
                 }
+
                 .prix-check{
                     display: flex;
                     flex-direction: row;
@@ -807,7 +861,7 @@ main {
             }
 
             .menu_proposition {
-                height: 75px;
+                height: 80px;
                 background: white;
                 border: 1px solid transparent;
                 border-radius: 20px 20px 20px 20px;
@@ -820,7 +874,7 @@ main {
 
                 @media (min-width: 730px) and (max-width: 2000px) {
                     
-                    width: 650px;
+                    width: 690px;
 
                 }
 
@@ -834,13 +888,22 @@ main {
                     h3 {
                         font-size: 1.1em;
                         padding-bottom: 5px;
+
+                        @media (min-width: 730px) and (max-width: 2000px) {
+                            font-size: 1.3em;
+                        }
                     }
                 
                     h4{
                         font-size: 0.9em;
                         font-weight: 300;
+
+                        @media (min-width: 730px) and (max-width: 2000px) {
+                            font-size: 1.1em;
+                        }
                     }
                 }
+                
                 .prix-check{
                     display: flex;
                     flex-direction: row;
