@@ -514,7 +514,7 @@ main {
                         -webkit-text-fill-color: transparent;
                         -webkit-background-clip: text;
                         opacity: 0;
-                        transition: all 800ms;
+                        transition: all 500ms;
                         transform: scale(0);
                         transform-origin: bottom;
                         position: relative;
@@ -575,6 +575,7 @@ main {
 
             .heart_filling {
                     width: 50px;
+                    height: 60px;
                     font-weight: 400;
                     left: 0%;
                     bottom: -15px;
@@ -612,122 +613,23 @@ main {
 
         }
 
-        .bloc_entrées{
+        .bloc_entrées {
 
             width: 100%;
+            @keyframes menu_animation {
+                0% {
+                    transform: translateY(0);
+                    opacity: 0;
+                }
+
+                100% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
 
             @media (min-width: 730px) and (max-width: 2000px) {
-            width: 75%;
-            display: flex;
-            flex-direction: column;
-            align-items:center;
-            justify-content: center;
-            }
-
-            h2 {
-                width: 10%;
-                font-size: 1.0em;
-                font-weight: 300;
-                border-bottom: 3px solid $tert-green; 
-
-                @media (min-width: 730px) and (max-width: 2000px) {               
-                    font-size: 1.5em;
-                    font-weight: 400;
-                }
-
-            }
-
-            .menu_proposition {
-                height: 80px;
-                background: white;
-                border: 1px solid transparent;
-                border-radius: 20px 20px 20px 20px;
-                margin-bottom: 20px;
-                padding: 0px 0px 0px 10px;
-                box-shadow: 0px 5px 15px rgb(219, 219, 219);
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-
-                @media (min-width: 730px) and (max-width: 2000px) {
-                    
-                    width: 690px;
-
-                }
-
-                .menu_text {
-                    width: 50%;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-
-                    h3 {
-                        font-size: 1.1em;
-                        padding-bottom: 5px;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-
-                        @media (min-width: 730px) and (max-width: 2000px) {
-                            font-size: 1.3em;
-                        }
-
-                    }
                 
-                    h4{
-                        font-size: 0.9em;
-                        font-weight: 300;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-
-                        @media (min-width: 730px) and (max-width: 2000px) {
-                            font-size: 1.1em;
-                        }
-
-                    }
-                }
-
-                .prix-check{
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-
-                    p {
-                        font-weight: bold;
-                        padding-top: 25px;
-                        padding-right: 10px;
-                        
-                    }
-
-                    .menu_check {
-                        padding: 27px 20px 26px 20px;
-                        background: $tert-green;
-                        border-radius: 0px 20px 20px 0px;
-
-                        .check {
-                            padding: 2px;
-                            border-radius: 20px;
-                            background: white;
-                            i {
-                                font-size: 0.8em;
-                                color: $tert-green;
-                                padding: 2px 3px 2px 3px;
-                            }
-                        }
-                    }
-                }       
-
-            }
-
-        }
-
-        .bloc_plats {
-
-            width: 100%;
-
-            @media (min-width: 730px) and (max-width: 2000px) {
-            width: 75%;
             display: flex;
             flex-direction: column;
             align-items:center;
@@ -737,21 +639,21 @@ main {
             h2 {
                 width: 10%;
                 font-size: 1.0em;
-                font-weight: 300;
                 margin-top: 40px;
+                font-weight: 300;
                 border-bottom: 3px solid $tert-green;
 
                 @media (min-width: 730px) and (max-width: 2000px) {
                     font-size: 1.5em;
                     font-weight: 600;
                 }
-                
+
             }
 
             .menu_proposition {
                 height: 80px;
                 background: white;
-                border: 1px solid transparent;
+                border: 0px solid transparent;
                 border-radius: 20px 20px 20px 20px;
                 margin-bottom: 20px;
                 padding: 0px 0px 0px 10px;
@@ -759,6 +661,10 @@ main {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                animation: menu_animation 3000ms  ease-in-out ;
 
                 @media (min-width: 730px) and (max-width: 2000px) {
                     
@@ -783,9 +689,8 @@ main {
                         @media (min-width: 730px) and (max-width: 2000px) {
                             font-size: 1.3em;
                         }
-
                     }
-                                
+                
                     h4{
                         font-size: 0.9em;
                         font-weight: 300;
@@ -796,11 +701,10 @@ main {
                         @media (min-width: 730px) and (max-width: 2000px) {
                             font-size: 1.1em;
                         }
-
                     }
                 }
-
-                .prix-check{
+                
+                .menu_prix {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
@@ -811,25 +715,145 @@ main {
                         padding-right: 10px;
                         
                     }
+                }
 
-                    .menu_check {
-                        padding: 27px 20px 26px 20px;
-                        background: $tert-green;
-                        border-radius: 0px 20px 20px 0px;
+                .menu_check {
+                    padding: 28px 20px 28px 20px;
+                    background: $tert-green;
+                    border-radius: 0px 20px 20px 0px;                      
+                    background: $tert-green;
+                    overflow: hidden;
+                
+                    i {
+                        font-size: 1.5em;
+                        color: white;
+                        
+                    }
+                                            
+                }      
+            }
 
-                        .check {
-                            padding: 2px;
-                            border-radius: 20px;
-                            background: white;
-                            i {
-                                font-size: 0.8em;
-                                color: $tert-green;
-                                padding: 2px 3px 2px 3px;
-                            }
+        }
+
+    .bloc_plats {
+
+            width: 100%;
+
+            @media (min-width: 730px) and (max-width: 2000px) {
+                
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: center;
+            }
+
+            h2 {
+                width: 10%;
+                font-size: 1.0em;
+                margin-top: 40px;
+                font-weight: 300;
+                border-bottom: 3px solid $tert-green;
+
+                @media (min-width: 730px) and (max-width: 2000px) {
+                    font-size: 1.5em;
+                    font-weight: 600;
+                }
+
+            }
+
+            .menu_proposition {
+                height: 80px;
+                background: white;
+                border: 0px solid transparent;
+                border-radius: 20px 20px 20px 20px;
+                margin-bottom: 20px;
+                padding: 0px 0px 0px 10px;
+                box-shadow: 0px 5px 15px rgb(219, 219, 219);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;  
+
+            .proposition_1 {
+               animation: menu_animation 3000ms linear; 
+            }
+
+            .proposition_2 {
+                 animation: menu_animation 3500ms linear;
+            }
+
+            .proposition_3 {
+                animation: menu_animation 4000ms linear;
+            }
+                
+
+                @media (min-width: 730px) and (max-width: 2000px) {
+                    
+                    width: 690px;
+
+                }
+
+                .menu_text {
+
+                    width: 50%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    h3 {
+                        font-size: 1.1em;
+                        padding-bottom: 5px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+
+                        @media (min-width: 730px) and (max-width: 2000px) {
+                            font-size: 1.3em;
                         }
                     }
-                }     
+                
+                    h4{
+                        font-size: 0.9em;
+                        font-weight: 300;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
 
+                        @media (min-width: 730px) and (max-width: 2000px) {
+                            font-size: 1.1em;
+                        }
+                    }
+                }
+                
+                .menu_prix {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    p {
+                        font-weight: bold;
+                        padding-top: 25px;
+                        padding-right: 10px;
+                        
+                    }
+                }
+
+                .menu_check {
+                    padding: 28px 20px 28px 20px;
+                    background: $tert-green;
+                    border-radius: 0px 20px 20px 0px;                      
+                    background: $tert-green;
+                    overflow: hidden;
+                
+                    i {
+                        font-size: 1.5em;
+                        color: white;
+                        
+                    }
+                                            
+                }      
             }
 
         }
@@ -863,7 +887,7 @@ main {
             .menu_proposition {
                 height: 80px;
                 background: white;
-                border: 1px solid transparent;
+                border: 0px solid transparent;
                 border-radius: 20px 20px 20px 20px;
                 margin-bottom: 20px;
                 padding: 0px 0px 0px 10px;
@@ -871,6 +895,10 @@ main {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                animation: menu_animation 3000ms ease-in-out;
 
                 @media (min-width: 730px) and (max-width: 2000px) {
                     
@@ -888,6 +916,9 @@ main {
                     h3 {
                         font-size: 1.1em;
                         padding-bottom: 5px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
 
                         @media (min-width: 730px) and (max-width: 2000px) {
                             font-size: 1.3em;
@@ -897,6 +928,9 @@ main {
                     h4{
                         font-size: 0.9em;
                         font-weight: 300;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
 
                         @media (min-width: 730px) and (max-width: 2000px) {
                             font-size: 1.1em;
@@ -904,7 +938,7 @@ main {
                     }
                 }
                 
-                .prix-check{
+                .menu_prix {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
@@ -915,23 +949,32 @@ main {
                         padding-right: 10px;
                         
                     }
+                }
 
-                    .menu_check {
-                        padding: 27px 20px 26px 20px;
-                        background: $tert-green;
-                        border-radius: 0px 20px 20px 0px;
+                .menu_check {
+                    padding: 28px 20px 28px 20px;
+                    background: $tert-green;
+                    border-radius: 0px 20px 20px 0px;                      
+                    background: $tert-green;
+                    overflow: hidden;
+                    width: 33%;
+                    max-width: 0%;
+                    transition: all 500ms linear;
 
-                        .check {
-                            padding: 2px;
-                            border-radius: 20px;
-                            background: white;
-                            i {
-                                font-size: 0.8em;
-                                color: $tert-green;
-                                padding: 2px 3px 2px 3px;
-                            }
-                        }
+                    i {
+                        font-size: 1.5em;
+                        color: white;
+                        transition: all 500ms linear;   
                     }
+                }
+
+                &:hover{
+                    .menu_check {
+                        max-width: 40px;
+                        &--i {      
+                            transform: rotateZ(360deg);
+                        } 
+                    }                     
                 }      
             }
 
