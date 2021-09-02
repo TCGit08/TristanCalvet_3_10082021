@@ -492,6 +492,7 @@ main {
                 
                 .heart_filling {
                     width: 30px;
+                    height: 30px;
                     font-weight: 100;
                     left: 85%;
                     bottom: 75px;
@@ -534,10 +535,17 @@ main {
         height: 240px; 
         position: relative;
         top: 30px;
+        z-index: -2;
+
+        @media (min-width: 730px) and (max-width: 2000px) {
+
+        }
                 
         img {
             width: 100%;
         }
+
+
     
     }
       
@@ -561,7 +569,7 @@ main {
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            padding-top: 20px;
+            padding-top: 10px;
             
 
             h1 {
@@ -571,20 +579,19 @@ main {
 
             @media (min-width: 730px) and (max-width: 2000px) {
                     font-size: 1.4em;
+                    padding-right: 20px;
                 }
 
             .heart_filling {
-                    width: 50px;
-                    height: 60px;
+                    width: 30px;
+                    height: 30px;
                     font-weight: 400;
-                    left: 0%;
-                    bottom: -15px;
                     font-size: 1.7em;
                     position: relative;
                     z-index: 10;
                     color: black;
-                    background:transparent;                     
-                        
+                    background:transparent;
+                                           
                     &:hover>.heart_filled {
                         opacity: 1;
                         transform: scale(0.8);
@@ -613,12 +620,26 @@ main {
 
         }
 
+        .menu {
+
+            width: 100%;
+            position: relative;
+            
+            @media (min-width: 730px) and (max-width: 2000px) {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;;
+            }
+        }
+
         .bloc_entrées {
 
             width: 100%;
             @keyframes menu_animation {
                 0% {
-                    transform: translateY(0);
+                    transform: translateY(15px);
                     opacity: 0;
                 }
 
@@ -630,10 +651,12 @@ main {
 
             @media (min-width: 730px) and (max-width: 2000px) {
                 
-            display: flex;
-            flex-direction: column;
-            align-items:center;
-            justify-content: center;
+                display: flex;
+                flex-direction: column;
+                align-items:center;
+                justify-content: center;
+                width: 35%;
+                
             }
 
             h2 {
@@ -644,10 +667,23 @@ main {
                 border-bottom: 3px solid $tert-green;
 
                 @media (min-width: 730px) and (max-width: 2000px) {
-                    font-size: 1.5em;
+                    font-size: 1.1em;
                     font-weight: 600;
                 }
 
+            }
+
+
+            .proposition_1 {
+               animation: menu_animation 800ms ease-in-out; 
+            }
+
+            .proposition_2 {
+                 animation: menu_animation 1300ms ease-in-out;
+            }
+
+            .proposition_3 {
+                animation: menu_animation 1800ms ease-in-out;
             }
 
             .menu_proposition {
@@ -664,11 +700,10 @@ main {
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
-                animation: menu_animation 3000ms  ease-in-out ;
 
                 @media (min-width: 730px) and (max-width: 2000px) {
                     
-                    width: 690px;
+                    width: 70%;
 
                 }
 
@@ -687,7 +722,7 @@ main {
                         text-overflow: ellipsis;
 
                         @media (min-width: 730px) and (max-width: 2000px) {
-                            font-size: 1.3em;
+                            font-size: 1.0em;
                         }
                     }
                 
@@ -699,7 +734,7 @@ main {
                         text-overflow: ellipsis;
 
                         @media (min-width: 730px) and (max-width: 2000px) {
-                            font-size: 1.1em;
+                            font-size: 0.9em;
                         }
                     }
                 }
@@ -741,10 +776,12 @@ main {
 
             @media (min-width: 730px) and (max-width: 2000px) {
                 
-            display: flex;
-            flex-direction: column;
-            align-items:center;
-            justify-content: center;
+                display: flex;
+                flex-direction: column;
+                align-items:center;
+                justify-content: center;
+                width: 35%;
+                
             }
 
             h2 {
@@ -755,10 +792,22 @@ main {
                 border-bottom: 3px solid $tert-green;
 
                 @media (min-width: 730px) and (max-width: 2000px) {
-                    font-size: 1.5em;
+                    font-size: 1.1em;
                     font-weight: 600;
                 }
 
+            }
+
+            .proposition_1 {
+               animation: menu_animation 800ms 1000ms ease-in-out; 
+            }
+
+            .proposition_2 {
+                animation: menu_animation 1300ms 1000ms ease-in-out;
+            }
+
+            .proposition_3 {
+                animation: menu_animation 1800ms 1000ms ease-in-out;
             }
 
             .menu_proposition {
@@ -776,22 +825,9 @@ main {
                 text-overflow: ellipsis;
                 white-space: nowrap;  
 
-            .proposition_1 {
-               animation: menu_animation 3000ms linear; 
-            }
-
-            .proposition_2 {
-                 animation: menu_animation 3500ms linear;
-            }
-
-            .proposition_3 {
-                animation: menu_animation 4000ms linear;
-            }
-                
-
                 @media (min-width: 730px) and (max-width: 2000px) {
                     
-                    width: 690px;
+                    width: 70%;
 
                 }
 
@@ -810,7 +846,7 @@ main {
                         text-overflow: ellipsis;
 
                         @media (min-width: 730px) and (max-width: 2000px) {
-                            font-size: 1.3em;
+                            font-size: 1.0em;
                         }
                     }
                 
@@ -822,7 +858,7 @@ main {
                         text-overflow: ellipsis;
 
                         @media (min-width: 730px) and (max-width: 2000px) {
-                            font-size: 1.1em;
+                            font-size: 0.9em;
                         }
                     }
                 }
@@ -864,10 +900,12 @@ main {
 
             @media (min-width: 730px) and (max-width: 2000px) {
                 
-            display: flex;
-            flex-direction: column;
-            align-items:center;
-            justify-content: center;
+                display: flex;
+                flex-direction: column;
+                align-items:center;
+                justify-content: center;
+                width: 35%;
+                
             }
 
             h2 {
@@ -878,10 +916,23 @@ main {
                 border-bottom: 3px solid $tert-green;
 
                 @media (min-width: 730px) and (max-width: 2000px) {
-                    font-size: 1.5em;
+                    font-size: 1.1em;
                     font-weight: 600;
                 }
 
+            }
+
+
+            .proposition_1 {
+               animation: menu_animation 800ms 2000ms ease-in-out; 
+            }
+
+            .proposition_2 {
+                 animation: menu_animation 1300ms 2000ms ease-in-out;
+            }
+
+            .proposition_3 {
+                animation: menu_animation 1800ms 2000ms ease-in-out;
             }
 
             .menu_proposition {
@@ -898,11 +949,10 @@ main {
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
-                animation: menu_animation 3000ms ease-in-out;
 
                 @media (min-width: 730px) and (max-width: 2000px) {
                     
-                    width: 690px;
+                    width: 70%;
 
                 }
 
@@ -921,7 +971,7 @@ main {
                         text-overflow: ellipsis;
 
                         @media (min-width: 730px) and (max-width: 2000px) {
-                            font-size: 1.3em;
+                            font-size: 1.0em;
                         }
                     }
                 
@@ -933,7 +983,7 @@ main {
                         text-overflow: ellipsis;
 
                         @media (min-width: 730px) and (max-width: 2000px) {
-                            font-size: 1.1em;
+                            font-size: 0.9em;
                         }
                     }
                 }
@@ -999,6 +1049,12 @@ main {
                 position: relative;
                 z-index: 1;
 
+                @media (min-width: 730px) and (max-width: 2000px) {
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    font-size: 1.0em;
+                }
+
 
                 &:hover {
                     &::after {
@@ -1053,6 +1109,15 @@ footer {
         width: 100%;
         padding-left: 20px;
         list-style: none;
+
+        @media (min-width: 730px) and (max-width: 2000px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-right: 20px;
+            padding-top: 10px;
+
+        }
 
         li{
             padding-bottom: 10px;

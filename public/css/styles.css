@@ -424,6 +424,7 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaura
 }
 main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_filling {
   width: 30px;
+  height: 30px;
   font-weight: 100;
   left: 85%;
   bottom: 75px;
@@ -461,6 +462,7 @@ main .fond_restaurant {
   height: 240px;
   position: relative;
   top: 30px;
+  z-index: -2;
 }
 main .fond_restaurant img {
   width: 100%;
@@ -482,7 +484,7 @@ main .bloc_menu .nom_restaurant {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 main .bloc_menu .nom_restaurant h1 {
   font-size: 1.6em;
@@ -491,14 +493,13 @@ main .bloc_menu .nom_restaurant h1 {
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .nom_restaurant {
     font-size: 1.4em;
+    padding-right: 20px;
   }
 }
 main .bloc_menu .nom_restaurant .heart_filling {
-  width: 50px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
   font-weight: 400;
-  left: 0%;
-  bottom: -15px;
   font-size: 1.7em;
   position: relative;
   z-index: 10;
@@ -529,12 +530,25 @@ main .bloc_menu .nom_restaurant .heart_filling .heart_filled {
     left: 0.2px;
   }
 }
+main .bloc_menu .menu {
+  width: 100%;
+  position: relative;
+}
+@media (min-width: 730px) and (max-width: 2000px) {
+  main .bloc_menu .menu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
 main .bloc_menu .bloc_entrées {
   width: 100%;
 }
 @keyframes menu_animation {
   0% {
-    transform: translateY(0);
+    transform: translateY(15px);
     opacity: 0;
   }
   100% {
@@ -548,6 +562,7 @@ main .bloc_menu .bloc_entrées {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 35%;
   }
 }
 main .bloc_menu .bloc_entrées h2 {
@@ -559,9 +574,18 @@ main .bloc_menu .bloc_entrées h2 {
 }
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .bloc_entrées h2 {
-    font-size: 1.5em;
+    font-size: 1.1em;
     font-weight: 600;
   }
+}
+main .bloc_menu .bloc_entrées .proposition_1 {
+  animation: menu_animation 800ms ease-in-out;
+}
+main .bloc_menu .bloc_entrées .proposition_2 {
+  animation: menu_animation 1300ms ease-in-out;
+}
+main .bloc_menu .bloc_entrées .proposition_3 {
+  animation: menu_animation 1800ms ease-in-out;
 }
 main .bloc_menu .bloc_entrées .menu_proposition {
   height: 80px;
@@ -577,11 +601,10 @@ main .bloc_menu .bloc_entrées .menu_proposition {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  animation: menu_animation 3000ms ease-in-out;
 }
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .bloc_entrées .menu_proposition {
-    width: 690px;
+    width: 70%;
   }
 }
 main .bloc_menu .bloc_entrées .menu_proposition .menu_text {
@@ -599,7 +622,7 @@ main .bloc_menu .bloc_entrées .menu_proposition .menu_text h3 {
 }
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .bloc_entrées .menu_proposition .menu_text h3 {
-    font-size: 1.3em;
+    font-size: 1em;
   }
 }
 main .bloc_menu .bloc_entrées .menu_proposition .menu_text h4 {
@@ -611,7 +634,7 @@ main .bloc_menu .bloc_entrées .menu_proposition .menu_text h4 {
 }
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .bloc_entrées .menu_proposition .menu_text h4 {
-    font-size: 1.1em;
+    font-size: 0.9em;
   }
 }
 main .bloc_menu .bloc_entrées .menu_proposition .menu_prix {
@@ -644,6 +667,7 @@ main .bloc_menu .bloc_plats {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 35%;
   }
 }
 main .bloc_menu .bloc_plats h2 {
@@ -655,9 +679,18 @@ main .bloc_menu .bloc_plats h2 {
 }
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .bloc_plats h2 {
-    font-size: 1.5em;
+    font-size: 1.1em;
     font-weight: 600;
   }
+}
+main .bloc_menu .bloc_plats .proposition_1 {
+  animation: menu_animation 800ms 1000ms ease-in-out;
+}
+main .bloc_menu .bloc_plats .proposition_2 {
+  animation: menu_animation 1300ms 1000ms ease-in-out;
+}
+main .bloc_menu .bloc_plats .proposition_3 {
+  animation: menu_animation 1800ms 1000ms ease-in-out;
 }
 main .bloc_menu .bloc_plats .menu_proposition {
   height: 80px;
@@ -674,18 +707,9 @@ main .bloc_menu .bloc_plats .menu_proposition {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-main .bloc_menu .bloc_plats .menu_proposition .proposition_1 {
-  animation: menu_animation 3000ms linear;
-}
-main .bloc_menu .bloc_plats .menu_proposition .proposition_2 {
-  animation: menu_animation 3500ms linear;
-}
-main .bloc_menu .bloc_plats .menu_proposition .proposition_3 {
-  animation: menu_animation 4000ms linear;
-}
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .bloc_plats .menu_proposition {
-    width: 690px;
+    width: 70%;
   }
 }
 main .bloc_menu .bloc_plats .menu_proposition .menu_text {
@@ -703,7 +727,7 @@ main .bloc_menu .bloc_plats .menu_proposition .menu_text h3 {
 }
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .bloc_plats .menu_proposition .menu_text h3 {
-    font-size: 1.3em;
+    font-size: 1em;
   }
 }
 main .bloc_menu .bloc_plats .menu_proposition .menu_text h4 {
@@ -715,7 +739,7 @@ main .bloc_menu .bloc_plats .menu_proposition .menu_text h4 {
 }
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .bloc_plats .menu_proposition .menu_text h4 {
-    font-size: 1.1em;
+    font-size: 0.9em;
   }
 }
 main .bloc_menu .bloc_plats .menu_proposition .menu_prix {
@@ -748,6 +772,7 @@ main .bloc_menu .bloc_desserts {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 35%;
   }
 }
 main .bloc_menu .bloc_desserts h2 {
@@ -759,9 +784,18 @@ main .bloc_menu .bloc_desserts h2 {
 }
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .bloc_desserts h2 {
-    font-size: 1.5em;
+    font-size: 1.1em;
     font-weight: 600;
   }
+}
+main .bloc_menu .bloc_desserts .proposition_1 {
+  animation: menu_animation 800ms 2000ms ease-in-out;
+}
+main .bloc_menu .bloc_desserts .proposition_2 {
+  animation: menu_animation 1300ms 2000ms ease-in-out;
+}
+main .bloc_menu .bloc_desserts .proposition_3 {
+  animation: menu_animation 1800ms 2000ms ease-in-out;
 }
 main .bloc_menu .bloc_desserts .menu_proposition {
   height: 80px;
@@ -777,11 +811,10 @@ main .bloc_menu .bloc_desserts .menu_proposition {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  animation: menu_animation 3000ms ease-in-out;
 }
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .bloc_desserts .menu_proposition {
-    width: 690px;
+    width: 70%;
   }
 }
 main .bloc_menu .bloc_desserts .menu_proposition .menu_text {
@@ -799,7 +832,7 @@ main .bloc_menu .bloc_desserts .menu_proposition .menu_text h3 {
 }
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .bloc_desserts .menu_proposition .menu_text h3 {
-    font-size: 1.3em;
+    font-size: 1em;
   }
 }
 main .bloc_menu .bloc_desserts .menu_proposition .menu_text h4 {
@@ -811,7 +844,7 @@ main .bloc_menu .bloc_desserts .menu_proposition .menu_text h4 {
 }
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .bloc_desserts .menu_proposition .menu_text h4 {
-    font-size: 1.1em;
+    font-size: 0.9em;
   }
 }
 main .bloc_menu .bloc_desserts .menu_proposition .menu_prix {
@@ -864,6 +897,13 @@ main .bloc_menu .button_commande button {
   position: relative;
   z-index: 1;
 }
+@media (min-width: 730px) and (max-width: 2000px) {
+  main .bloc_menu .button_commande button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1em;
+  }
+}
 main .bloc_menu .button_commande button:hover::after {
   opacity: 1;
 }
@@ -906,6 +946,15 @@ footer ul {
   width: 100%;
   padding-left: 20px;
   list-style: none;
+}
+@media (min-width: 730px) and (max-width: 2000px) {
+  footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 20px;
+    padding-top: 10px;
+  }
 }
 footer ul li {
   padding-bottom: 10px;
