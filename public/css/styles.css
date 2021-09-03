@@ -124,7 +124,7 @@ main .form_localisation form {
   justify-content: center;
   align-items: center;
   width: 90%;
-  margin-left: 90px;
+  padding-left: 90px;
 }
 main .form_localisation form i {
   font-size: 1.2em;
@@ -242,7 +242,7 @@ main .bloc_fonctionnement .bloc_fonctions .fonction_choix {
   display: flex;
   border-radius: 25px 25px 25px 25px;
   padding: 10px 0px 10px 0px;
-  margin-left: 13px;
+  padding-left: 13px;
   background: #f1f1f1;
   box-shadow: 0px 5px 15px #dbdbdb;
   position: relative;
@@ -467,6 +467,12 @@ main .fond_restaurant {
 main .fond_restaurant img {
   width: 100%;
 }
+@media (min-width: 730px) and (max-width: 2000px) {
+  main .fond_restaurant img {
+    height: 300px;
+    object-fit: cover;
+  }
+}
 main .bloc_menu {
   width: 100%;
   background: #f1f1f1;
@@ -487,13 +493,14 @@ main .bloc_menu .nom_restaurant {
   padding-top: 10px;
 }
 main .bloc_menu .nom_restaurant h1 {
-  font-size: 1.6em;
+  font-size: 1.8em;
   font-family: "Shrikhand", cursive;
 }
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .nom_restaurant {
     font-size: 1.4em;
     padding-right: 20px;
+    padding-left: 20px;
   }
 }
 main .bloc_menu .nom_restaurant .heart_filling {
@@ -532,6 +539,7 @@ main .bloc_menu .nom_restaurant .heart_filling .heart_filled {
 }
 main .bloc_menu .menu {
   width: 100%;
+  padding-top: 0px;
   position: relative;
 }
 @media (min-width: 730px) and (max-width: 2000px) {
@@ -539,8 +547,7 @@ main .bloc_menu .menu {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
   }
 }
 main .bloc_menu .bloc_entrées {
@@ -562,7 +569,7 @@ main .bloc_menu .bloc_entrées {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 35%;
+    width: 34%;
   }
 }
 main .bloc_menu .bloc_entrées h2 {
@@ -587,6 +594,9 @@ main .bloc_menu .bloc_entrées .proposition_2 {
 main .bloc_menu .bloc_entrées .proposition_3 {
   animation: menu_animation 1800ms ease-in-out;
 }
+main .bloc_menu .bloc_entrées .proposition_4 {
+  animation: menu_animation 2300ms ease-in-out;
+}
 main .bloc_menu .bloc_entrées .menu_proposition {
   height: 80px;
   background: white;
@@ -604,14 +614,15 @@ main .bloc_menu .bloc_entrées .menu_proposition {
 }
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .bloc_entrées .menu_proposition {
-    width: 70%;
+    width: 90%;
   }
 }
 main .bloc_menu .bloc_entrées .menu_proposition .menu_text {
-  width: 50%;
+  width: 90%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-right: 10px;
 }
 main .bloc_menu .bloc_entrées .menu_proposition .menu_text h3 {
   font-size: 1.1em;
@@ -626,7 +637,7 @@ main .bloc_menu .bloc_entrées .menu_proposition .menu_text h3 {
   }
 }
 main .bloc_menu .bloc_entrées .menu_proposition .menu_text h4 {
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: 300;
   white-space: nowrap;
   overflow: hidden;
@@ -638,9 +649,11 @@ main .bloc_menu .bloc_entrées .menu_proposition .menu_text h4 {
   }
 }
 main .bloc_menu .bloc_entrées .menu_proposition .menu_prix {
+  width: 25%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-end;
 }
 main .bloc_menu .bloc_entrées .menu_proposition .menu_prix p {
   font-weight: bold;
@@ -648,7 +661,9 @@ main .bloc_menu .bloc_entrées .menu_proposition .menu_prix p {
   padding-right: 10px;
 }
 main .bloc_menu .bloc_entrées .menu_proposition .menu_check {
-  padding: 28px 20px 28px 20px;
+  position: relative;
+  left: 68px;
+  padding: 28px 28px 28px 20px;
   background: #99E2D0;
   border-radius: 0px 20px 20px 0px;
   background: #99E2D0;
@@ -657,6 +672,15 @@ main .bloc_menu .bloc_entrées .menu_proposition .menu_check {
 main .bloc_menu .bloc_entrées .menu_proposition .menu_check i {
   font-size: 1.5em;
   color: white;
+  transform: rotate(360deg);
+}
+main .bloc_menu .bloc_entrées .menu_proposition:hover .menu_check {
+  transform: translateX(-100%);
+  transition: transform 600ms ease-in-out;
+}
+main .bloc_menu .bloc_entrées .menu_proposition:hover .menu_check i {
+  transform: rotateZ(0deg);
+  transition: transform 900ms ease-in-out;
 }
 main .bloc_menu .bloc_plats {
   width: 100%;
@@ -667,7 +691,7 @@ main .bloc_menu .bloc_plats {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 35%;
+    width: 34%;
   }
 }
 main .bloc_menu .bloc_plats h2 {
@@ -709,11 +733,11 @@ main .bloc_menu .bloc_plats .menu_proposition {
 }
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .bloc_plats .menu_proposition {
-    width: 70%;
+    width: 90%;
   }
 }
 main .bloc_menu .bloc_plats .menu_proposition .menu_text {
-  width: 50%;
+  width: 90%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -727,11 +751,12 @@ main .bloc_menu .bloc_plats .menu_proposition .menu_text h3 {
 }
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .bloc_plats .menu_proposition .menu_text h3 {
+    width: 75%;
     font-size: 1em;
   }
 }
 main .bloc_menu .bloc_plats .menu_proposition .menu_text h4 {
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: 300;
   white-space: nowrap;
   overflow: hidden;
@@ -743,9 +768,11 @@ main .bloc_menu .bloc_plats .menu_proposition .menu_text h4 {
   }
 }
 main .bloc_menu .bloc_plats .menu_proposition .menu_prix {
+  width: 25%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-end;
 }
 main .bloc_menu .bloc_plats .menu_proposition .menu_prix p {
   font-weight: bold;
@@ -753,7 +780,9 @@ main .bloc_menu .bloc_plats .menu_proposition .menu_prix p {
   padding-right: 10px;
 }
 main .bloc_menu .bloc_plats .menu_proposition .menu_check {
-  padding: 28px 20px 28px 20px;
+  position: relative;
+  left: 68px;
+  padding: 28px 28px 28px 20px;
   background: #99E2D0;
   border-radius: 0px 20px 20px 0px;
   background: #99E2D0;
@@ -762,6 +791,15 @@ main .bloc_menu .bloc_plats .menu_proposition .menu_check {
 main .bloc_menu .bloc_plats .menu_proposition .menu_check i {
   font-size: 1.5em;
   color: white;
+  transform: rotate(360deg);
+}
+main .bloc_menu .bloc_plats .menu_proposition:hover .menu_check {
+  transform: translateX(-100%);
+  transition: transform 600ms ease-in-out;
+}
+main .bloc_menu .bloc_plats .menu_proposition:hover .menu_check i {
+  transform: rotateZ(0deg);
+  transition: transform 900ms ease-in-out;
 }
 main .bloc_menu .bloc_desserts {
   width: 100%;
@@ -772,7 +810,7 @@ main .bloc_menu .bloc_desserts {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 35%;
+    width: 34%;
   }
 }
 main .bloc_menu .bloc_desserts h2 {
@@ -814,11 +852,11 @@ main .bloc_menu .bloc_desserts .menu_proposition {
 }
 @media (min-width: 730px) and (max-width: 2000px) {
   main .bloc_menu .bloc_desserts .menu_proposition {
-    width: 70%;
+    width: 90%;
   }
 }
 main .bloc_menu .bloc_desserts .menu_proposition .menu_text {
-  width: 50%;
+  width: 90%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -836,7 +874,7 @@ main .bloc_menu .bloc_desserts .menu_proposition .menu_text h3 {
   }
 }
 main .bloc_menu .bloc_desserts .menu_proposition .menu_text h4 {
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: 300;
   white-space: nowrap;
   overflow: hidden;
@@ -848,35 +886,38 @@ main .bloc_menu .bloc_desserts .menu_proposition .menu_text h4 {
   }
 }
 main .bloc_menu .bloc_desserts .menu_proposition .menu_prix {
+  width: 25%;
+  padding-right: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-end;
 }
 main .bloc_menu .bloc_desserts .menu_proposition .menu_prix p {
   font-weight: bold;
   padding-top: 25px;
-  padding-right: 10px;
 }
 main .bloc_menu .bloc_desserts .menu_proposition .menu_check {
-  padding: 28px 20px 28px 20px;
+  position: relative;
+  left: 68px;
+  padding: 28px 28px 28px 20px;
   background: #99E2D0;
   border-radius: 0px 20px 20px 0px;
   background: #99E2D0;
   overflow: hidden;
-  width: 33%;
-  max-width: 0%;
-  transition: all 500ms linear;
 }
 main .bloc_menu .bloc_desserts .menu_proposition .menu_check i {
   font-size: 1.5em;
   color: white;
-  transition: all 500ms linear;
+  transform: rotate(360deg);
 }
 main .bloc_menu .bloc_desserts .menu_proposition:hover .menu_check {
-  max-width: 40px;
+  transform: translateX(-100%);
+  transition: transform 600ms ease-in-out;
 }
-main .bloc_menu .bloc_desserts .menu_proposition:hover .menu_check--i {
-  transform: rotateZ(360deg);
+main .bloc_menu .bloc_desserts .menu_proposition:hover .menu_check i {
+  transform: rotateZ(0deg);
+  transition: transform 900ms ease-in-out;
 }
 main .bloc_menu .button_commande {
   width: 219px;
@@ -919,7 +960,7 @@ main .bloc_menu .button_commande button::after {
   box-shadow: 0px 5px 10px #878787;
   opacity: 0;
   z-index: -1;
-  transition: opacity 250ms;
+  transition: opacity 300ms;
 }
 
 footer {
@@ -959,8 +1000,23 @@ footer ul {
 footer ul li {
   padding-bottom: 10px;
 }
+footer ul li .fa-utensils {
+  padding-right: 8px;
+}
+@media (min-width: 730px) and (max-width: 2000px) {
+  footer ul li .fa-utensils {
+    padding-right: 3px;
+  }
+}
+footer ul li i {
+  font-size: 0.8em;
+  padding-right: 2px;
+}
 footer ul li a {
   color: white;
+}
+footer ul li a:hover {
+  color: #FF79DA;
 }
 
 /*# sourceMappingURL=styles.css.map */
