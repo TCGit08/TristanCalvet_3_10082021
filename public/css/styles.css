@@ -102,11 +102,9 @@ main .loader .loading_spinner::before, main .loader .loading_spinner::after {
 }
 @keyframes spin {
   from {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   to {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -197,7 +195,7 @@ main .bloc_présentation .button_sub button::after {
   bottom: 0;
   left: 0;
   border-radius: 30px 30px 30px 30px;
-  background-color: to top, white, 45%, white;
+  background: linear-gradient(to top, #985ede, 45%, #ff93e1);
   box-shadow: 0px 5px 10px #878787;
   opacity: 0;
   z-index: -1;
@@ -217,6 +215,7 @@ main .bloc_fonctionnement .bloc_fonctions {
   padding-right: 20px;
   margin-bottom: 40px;
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
 @media (min-width: 480px) and (max-width: 1039px) {
@@ -229,7 +228,8 @@ main .bloc_fonctionnement .bloc_fonctions {
   main .bloc_fonctionnement .bloc_fonctions {
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
   }
 }
 main .bloc_fonctionnement .bloc_fonctions a {
@@ -237,9 +237,9 @@ main .bloc_fonctionnement .bloc_fonctions a {
   margin-bottom: 30px;
 }
 main .bloc_fonctionnement .bloc_fonctions .fonction_choix {
-  align-items: center;
-  width: 320px;
   display: flex;
+  align-items: center;
+  width: 100%;
   border-radius: 25px 25px 25px 25px;
   padding: 10px 0px 10px 0px;
   padding-left: 13px;
@@ -281,26 +281,32 @@ main .bloc_fonctionnement .bloc_fonctions .fonction_choix span {
   padding: 4px 8px 3px 8px;
   border-radius: 20px 20px 20px 20px;
   position: relative;
-  right: 13px;
+  right: 25px;
 }
 main .bloc_fonctionnement .bloc_fonctions .fonction_choix i {
   font-size: 1.2em;
   color: grey;
   position: absolute;
-  padding-left: 35px;
+  padding-left: 20px;
   justify-content: center;
+}
+main .bloc_fonctionnement .bloc_fonctions .fonction_choix .fa-list-ul {
+  font-size: 1em;
+}
+main .bloc_fonctionnement .bloc_fonctions .fonction_choix .fa-store {
+  font-size: 1em;
 }
 main .bloc_fonctionnement .bloc_fonctions .fonction_choix p {
   width: 100%;
   font-size: 1em;
   color: black;
-  padding-right: 40px;
-  padding-left: 55px;
+  padding-right: 20px;
+  padding-left: 35px;
   font-weight: 500;
 }
 @media (min-width: 1040px) {
   main .bloc_fonctionnement .bloc_fonctions .fonction_choix p {
-    font-size: 0.9em;
+    font-size: 1em;
   }
 }
 main .bloc_restaurant {
@@ -367,7 +373,7 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaura
   background: white;
   width: 100%;
   height: 240px;
-  border: 1px solid white;
+  border: 1px solid transparent;
   border-radius: 20px 20px 20px 20px;
   box-shadow: 0px 10px 15px #dbdbdb;
 }
@@ -443,7 +449,6 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_filling .h
   color: #FF79DA;
   background: linear-gradient(to top, #9356DC, 45%, #FF79DA);
   background-clip: border-box;
-  -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   opacity: 0;
   transition: all 500ms;
@@ -522,7 +527,6 @@ main .bloc_menu .nom_restaurant .heart_filling .heart_filled {
   color: #FF79DA;
   background: linear-gradient(to top, #9356DC, 45%, #FF79DA);
   background-clip: border-box;
-  -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   opacity: 0;
   transition: all 500ms;
@@ -586,16 +590,16 @@ main .bloc_menu .bloc_entrées h2 {
   }
 }
 main .bloc_menu .bloc_entrées .proposition_1 {
-  animation: menu_animation 800ms ease-in-out;
+  animation: menu_animation 1000ms ease-in-out;
 }
 main .bloc_menu .bloc_entrées .proposition_2 {
-  animation: menu_animation 1300ms ease-in-out;
-}
-main .bloc_menu .bloc_entrées .proposition_3 {
   animation: menu_animation 1800ms ease-in-out;
 }
+main .bloc_menu .bloc_entrées .proposition_3 {
+  animation: menu_animation 2600ms ease-in-out;
+}
 main .bloc_menu .bloc_entrées .proposition_4 {
-  animation: menu_animation 2300ms ease-in-out;
+  animation: menu_animation 3100ms ease-in-out;
 }
 main .bloc_menu .bloc_entrées .menu_proposition {
   height: 80px;
@@ -708,13 +712,13 @@ main .bloc_menu .bloc_plats h2 {
   }
 }
 main .bloc_menu .bloc_plats .proposition_1 {
-  animation: menu_animation 800ms 1000ms ease-in-out;
+  animation: menu_animation 1000ms 1000ms ease-in-out;
 }
 main .bloc_menu .bloc_plats .proposition_2 {
-  animation: menu_animation 1300ms 1000ms ease-in-out;
+  animation: menu_animation 1800ms 1000ms ease-in-out;
 }
 main .bloc_menu .bloc_plats .proposition_3 {
-  animation: menu_animation 1800ms 1000ms ease-in-out;
+  animation: menu_animation 2600ms 1000ms ease-in-out;
 }
 main .bloc_menu .bloc_plats .menu_proposition {
   height: 80px;
@@ -827,13 +831,13 @@ main .bloc_menu .bloc_desserts h2 {
   }
 }
 main .bloc_menu .bloc_desserts .proposition_1 {
-  animation: menu_animation 800ms 2000ms ease-in-out;
+  animation: menu_animation 1000ms 2000ms ease-in-out;
 }
 main .bloc_menu .bloc_desserts .proposition_2 {
-  animation: menu_animation 1300ms 2000ms ease-in-out;
+  animation: menu_animation 1800ms 2000ms ease-in-out;
 }
 main .bloc_menu .bloc_desserts .proposition_3 {
-  animation: menu_animation 1800ms 2000ms ease-in-out;
+  animation: menu_animation 2600ms 2000ms ease-in-out;
 }
 main .bloc_menu .bloc_desserts .menu_proposition {
   height: 80px;
@@ -956,7 +960,7 @@ main .bloc_menu .button_commande button::after {
   bottom: 0;
   left: 0;
   border-radius: 30px 30px 30px 30px;
-  background-color: to top, white, 45%, white;
+  background: linear-gradient(to top, #985ede, 45%, #ff93e1);
   box-shadow: 0px 5px 10px #878787;
   opacity: 0;
   z-index: -1;
