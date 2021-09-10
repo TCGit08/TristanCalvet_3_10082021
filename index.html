@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="fr">
+
+    <!-- Bloc head: titre de la page, intégration du responsive, des polices utilisées, liens vers les icônes et le fichier CSS lié -->
+
     <head>
-        <title>Ohmyfood - Accueil</title>
+        <title>Ohmyfood - Accueil</title>       <!-- Titre de la page qui apparaîtra dans l'onglet-->
 	    <meta charset="utf-8" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet"> 
         <script src="https://kit.fontawesome.com/82398b39e7.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="./public/css/styles.css">
     </head>
 
+
     <body>
 
+        <!-- Header -->
+
         <header>
+
+            <!-- Logo Ohmyfood-->
 
             <div class="logo">
                 <img src="./images/logo/ohmyfood.png" alt="logo Ohmyfood"/>
             </div>
             
         </header>
+        
 
         <main>
+
+            <!-- Loading Spinner -->
               
             <div class="loader">
                 <div class="loading_spinner"></div>
                 <span class="loading_text">ohmyfood ...</span>    
             </div>
 
-            <!--Entrée pour le choix de ville-->
+            <!--Formulaire pour le choix de ville-->
 
             <div class="form_localisation">
                 <!--traitement.php serait l'éventuelle  fichier récupérant les valeurs pour le traitement de la demande par le serveur.-->
@@ -38,6 +49,8 @@
                 </form>
             </div>
 
+            <!-- Bloc de présentation succincte -->
+            
             <div class="bloc_présentation">
                 <h1>Réservez le menu  qui vous convient</h1>
                 <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
@@ -46,7 +59,10 @@
                 </div>
             </div>
 
+
             <div class="bloc_fonctionnement">
+
+                <!-- Bloc choix des services proposés -->
 
                 <h2>Fonctionnement</h2>
 
@@ -80,13 +96,20 @@
 
             </div>
 
+
             <div class="bloc_restaurant">
+
+                <!-- Bloc de présentation et choix des restaurants proposés -->
 
                 <h2>Restaurants</h2>
 
                 <div class="bloc_carte_restaurant">
 
+
+                    <!-- Bloc carte restaurant contenant le coeur interactif (même stracture pour les "menu_restaurant_N")-->
+
                     <div class="bloc_carte_coeur">    
+
                         <a href="menu_restaurant_1.html">
                             <div class="carte_restaurant restaurant_1">
                                 <div class="img_new">
@@ -101,6 +124,9 @@
                                 </div>
                             </div>
                         </a>
+
+                        <!-- Bloc coeur interactif -->
+
                         <div class="icône_interract">
                             <div class="heart_filling">
                                 <i class="far fa-heart heart_empty"></i>
@@ -179,6 +205,9 @@
                 </div>
             </div>                
         </main>
+
+
+        <!-- Footer -->
 
         <footer>
 

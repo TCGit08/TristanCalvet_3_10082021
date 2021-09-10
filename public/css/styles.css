@@ -1,8 +1,12 @@
 @charset "UTF-8";
+/* Déclaration variables couleurs de la charte graphique */
+/* box-sizing de l'ensemble des éléments des différentes pages */
 * {
   box-sizing: border-box;
 }
 
+/* Paramètres généraux s'appliquant à tout les "<body>" concernant le dimensionnement de leur bloc, la police à utiliser,
+    l'apparence des liens (pas en bleu et souligné par défaut et le positionnement des h* inférieures à 2 */
 body {
   width: 100%;
   font-family: "Roboto", sans-serif;
@@ -24,6 +28,7 @@ body h5 {
   margin-bottom: 0px;
 }
 
+/* HEADER */
 header {
   width: 100%;
   display: flex;
@@ -31,11 +36,14 @@ header {
   justify-content: center;
   margin-top: 0px;
   margin-bottom: 0px;
+  /* Lien de retour vers l'accueil */
+  /* Logo du HEADER */
 }
 header a {
   width: 40px;
   padding-left: 20px;
   margin-top: 30px;
+  /* Icône Flèche droite  du lien de retour vers l'accueil */
 }
 header a i {
   width: 100%;
@@ -52,8 +60,15 @@ header .logo img {
   width: 50%;
 }
 
+/* MAIN */
 main {
   /*Animation Loading spinner */
+  /* Formulaire de localisation */
+  /* Bloc Présentation rapide du service proposé comportant le bouton "Explorer nos restaurants */
+  /* Bloc Fonctionnement */
+  /* Bloc Restaurant */
+  /* Pages Restaurant */
+  /* Image de fond pour les pages rstaurants */
 }
 main .loader {
   position: fixed;
@@ -62,20 +77,25 @@ main .loader {
   left: 0;
   right: 0;
   z-index: 1000;
+  /* Couche supérieure à celle des autres éléments de la page pour assurer sa prédominance */
   display: flex;
+  /* et éviter les conflits éventuels */
   align-items: center;
   justify-content: center;
   visibility: visible;
   background: #f8f8f8;
   animation: loading-animation 0s 1800ms forwards;
+  /* Paramètre de l'animation "loading-animation */
 }
 main .loader .loading_text {
   font-size: 2.2em;
   font-family: "Shrikhand", cursive;
+  /* Police appliquée au texte de l'animation 'loading-animation */
   color: #481a7f;
   position: absolute;
 }
 main .loader .loading_spinner {
+  /* Aspect et positionnement du spinner */
   display: block;
   position: relative;
   background-color: #ffdff6;
@@ -85,27 +105,35 @@ main .loader .loading_spinner {
   border: 2px solid #FF79DA;
   border-top: 6px solid;
   border-radius: 50%;
+  /* Pour avoir un cercle */
   border-top-color: #481a7f;
+  /* Pour assombrir la couleur en restant dans la charte */
   animation: spin 1s ease-in-out infinite;
+  /* Paramètres de l'animation "spin" (infinite pour une rotation continue) */
 }
 main .loader .loading_spinner::before, main .loader .loading_spinner::after {
   content: "...";
+  /* Ne rien déclarer est possible mais cela permet de voir qqc en cas de problème */
   position: absolute;
   border-radius: 50%;
   border: 5px solid transparent;
 }
 @keyframes loading-animation {
+  /* Keyframe de l'animation loading-animation (disparition) */
   to {
     visibility: hidden;
     display: none;
   }
 }
 @keyframes spin {
+  /* Keyframe de l'animation "spin" (rotation de l'élément du spinner */
   from {
     transform: rotate(0deg);
+    /* situation initiale */
   }
   to {
     transform: rotate(360deg);
+    /* situation finale */
   }
 }
 main .form_localisation {
@@ -125,11 +153,13 @@ main .form_localisation form {
   padding-left: 90px;
 }
 main .form_localisation form i {
+  /* Icône du formulaire */
   font-size: 1.2em;
   padding-left: 0px;
   padding-right: 10px;
 }
 main .form_localisation form input {
+  /* Input du formulaire */
   font-size: 1.1em;
   font-weight: 400;
   color: black;
@@ -166,6 +196,7 @@ main .bloc_présentation p {
   font-weight: 300;
 }
 main .bloc_présentation .button_sub {
+  /* Bouton "Explorer nos restaurants" */
   width: 219px;
   height: 49px;
   padding-top: 10px;
@@ -184,11 +215,16 @@ main .bloc_présentation .button_sub button {
   position: relative;
   z-index: 1;
 }
+main .bloc_présentation .button_sub button:hover {
+  /* Activation de la modification d'aspect au survol */
+}
 main .bloc_présentation .button_sub button:hover::after {
   opacity: 1;
 }
 main .bloc_présentation .button_sub button::after {
-  content: "";
+  /* Effet de modification de la couleur du bouton par un système de couche (z-index) */
+  content: "...";
+  /* La couche apparait (opacity: 1) ou disparait (opacity: 0 suivant la situation */
   position: absolute;
   top: 0;
   right: 0;
@@ -196,10 +232,12 @@ main .bloc_présentation .button_sub button::after {
   left: 0;
   border-radius: 30px 30px 30px 30px;
   background: linear-gradient(to top, #985ede, 45%, #ff93e1);
+  /* Effet de dégradé */
   box-shadow: 0px 5px 10px #878787;
   opacity: 0;
   z-index: -1;
   transition: opacity 250ms;
+  /* Paramètres de l'effet de transition */
 }
 main .bloc_fonctionnement {
   width: 100%;
@@ -247,6 +285,9 @@ main .bloc_fonctionnement .bloc_fonctions .fonction_choix {
   position: relative;
   z-index: 1;
 }
+main .bloc_fonctionnement .bloc_fonctions .fonction_choix:hover {
+  /* Même principe que pour le bouton précédent: cahngement de couleur par jeu avec des couches */
+}
 main .bloc_fonctionnement .bloc_fonctions .fonction_choix:hover::after {
   opacity: 1;
 }
@@ -263,6 +304,7 @@ main .bloc_fonctionnement .bloc_fonctions .fonction_choix::after {
   opacity: 0;
   z-index: -1;
   transition: opacity 250ms;
+  /* Paramètres de la transition du changement d'opacité de la couche */
 }
 main .bloc_fonctionnement .bloc_fonctions .fonction_choix:hover i {
   color: #9356DC;
@@ -290,6 +332,7 @@ main .bloc_fonctionnement .bloc_fonctions .fonction_choix i {
   justify-content: center;
 }
 main .bloc_fonctionnement .bloc_fonctions .fonction_choix .fa-list-ul {
+  /* Ajustement pour la taille des icônes "liste à puces" et "store" */
   font-size: 1em;
 }
 main .bloc_fonctionnement .bloc_fonctions .fonction_choix .fa-store {
@@ -342,6 +385,7 @@ main .bloc_restaurant .bloc_carte_restaurant {
   }
 }
 main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur {
+  /* Bloc contenant la structure de la carte restaurant et du coeur interactif */
   height: 270px;
   position: relative;
   z-index: 1;
@@ -377,6 +421,7 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaura
   box-shadow: 0px 10px 15px #dbdbdb;
 }
 main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new {
+  /* Partie image de carte_restaurant */
   height: 160px;
 }
 main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new img {
@@ -389,6 +434,7 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaura
   border-radius: 20px 20px 0px 0px;
 }
 main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .img_new p {
+  /* Bandeau "Nouveau" - Positionnement relatif par rapport à l'image */
   width: 70px;
   position: relative;
   margin-top: 0px;
@@ -409,6 +455,7 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaura
   }
 }
 main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaurant .carte_description {
+  /* Partie texte de la carte_resaturant */
   display: flex;
   height: 50px;
   padding-top: 15px;
@@ -428,7 +475,9 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur a .carte_restaura
   padding-top: 3px;
 }
 main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_filling {
+  /* Cœur animé - Sa disposition le met en dehors du lien de la carte: qd on clique dessus */
   width: 30px;
+  /* le lien interne ne s'active pas, le rendant indépendant et permttant un effet au clic */
   height: 30px;
   font-weight: 100;
   left: 85%;
@@ -440,17 +489,23 @@ main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_filling {
   background: transparent;
 }
 main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_filling:hover > .heart_filled {
+  /* Pour que l'effet décrit par heart_filled s'applique au survol */
   opacity: 1;
   transform: scale(0.8);
   z-index: 12;
+  /* Pour la prédominance de cette couche lors de l'application de l'efft */
 }
 main .bloc_restaurant .bloc_carte_restaurant .bloc_carte_coeur .heart_filling .heart_filled {
   color: #FF79DA;
   background: linear-gradient(to top, #9356DC, 45%, #FF79DA);
+  /* Dégradé de couleur */
   background-clip: border-box;
   -webkit-background-clip: text;
+  /* Pour que l'effet se positionne bien en dessous de l'icône */
   opacity: 0;
+  /* background-clip donne une erreur aux tests W3C; -webkit... un avertissement */
   transition: all 500ms;
+  /* Paramètres de la transition */
   transform: scale(0);
   transform-origin: bottom;
   position: relative;
@@ -469,6 +524,7 @@ main .fond_restaurant {
   position: relative;
   top: 30px;
   z-index: -2;
+  /* Pour le postionnement en dessous du .bloc_menu */
 }
 main .fond_restaurant img {
   width: 100%;
@@ -489,8 +545,13 @@ main .bloc_menu {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* ENTREES */
+  /* PLATS */
+  /* DESSERTS */
+  /* Bouton "Commander" */
 }
 main .bloc_menu .nom_restaurant {
+  /* Nom du restaurant + cœur interactif */
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -512,6 +573,7 @@ main .bloc_menu .nom_restaurant h1 {
   }
 }
 main .bloc_menu .nom_restaurant .heart_filling {
+  /* Reprise du cœur interactif de la page d'accueil */
   width: 30px;
   height: 30px;
   font-weight: 400;
@@ -559,9 +621,12 @@ main .bloc_menu .menu {
 }
 main .bloc_menu .bloc_entrées {
   width: 100%;
+  /* Donc nécessité de faire une distinction dans les éléments "proposition" */
 }
 @keyframes menu_animation {
+  /* Keyframe de l'animation d'apparition progressive "menu_animation */
   0% {
+    /* "jeu" sur la translation verticale et la modificaton d'opacité */
     transform: translateY(15px);
     opacity: 0;
   }
@@ -602,7 +667,9 @@ main .bloc_menu .bloc_entrées h2 {
   }
 }
 main .bloc_menu .bloc_entrées .proposition_1 {
+  /* Paramètres de l'animation "menu_animation - "ease-in-out" pour le naturel */
   animation: menu_animation 1000ms ease-in-out;
+  /* Durées différentes pour renforcer la progressivité de l'effet */
 }
 main .bloc_menu .bloc_entrées .proposition_2 {
   animation: menu_animation 1800ms ease-in-out;
@@ -626,6 +693,7 @@ main .bloc_menu .bloc_entrées .menu_proposition {
   justify-content: space-between;
   overflow: hidden;
   text-overflow: ellipsis;
+  /* ... en cas d'"invisibilité" du texte */
   white-space: nowrap;
 }
 @media (min-width: 470px) and (max-width: 949px) {
@@ -660,6 +728,7 @@ main .bloc_menu .bloc_entrées .menu_proposition .menu_text h4 {
   text-overflow: ellipsis;
 }
 main .bloc_menu .bloc_entrées .menu_proposition .prix-check {
+  /* Bloc mobile prix + check */
   width: 100%;
   display: flex;
   position: relative;
@@ -701,8 +770,10 @@ main .bloc_menu .bloc_entrées .menu_proposition .prix-check .menu_check i {
   font-size: 1.5em;
   color: white;
   transform: rotate(360deg);
+  /* Effet de rotation de la coche */
 }
 main .bloc_menu .bloc_entrées .menu_proposition:hover .prix-check {
+  /* Animations du bloc et dans le bloc "prix-check" + ajustements responsive */
   transform: translateX(-50%);
   transition: transform 600ms ease-in-out;
 }
@@ -721,6 +792,7 @@ main .bloc_menu .bloc_entrées .menu_proposition:hover .prix-check i {
   transition: transform 900ms ease-in-out;
 }
 main .bloc_menu .bloc_plats {
+  /* Même structure que "bloc_entrée" et "bloc_desserts */
   width: 100%;
 }
 @media (min-width: 470px) and (max-width: 949px) {
@@ -874,6 +946,7 @@ main .bloc_menu .bloc_plats .menu_proposition:hover .prix-check i {
   transition: transform 900ms ease-in-out;
 }
 main .bloc_menu .bloc_desserts {
+  /* Même structure que "bloc_entrée" et "bloc_desserts */
   width: 100%;
 }
 @media (min-width: 470px) and (max-width: 949px) {
@@ -1027,6 +1100,7 @@ main .bloc_menu .bloc_desserts .menu_proposition:hover .prix-check i {
   transition: transform 900ms ease-in-out;
 }
 main .bloc_menu .button_commande {
+  /* Même effet que le bouton "Explorer nos restaurants */
   width: 219px;
   height: 49px;
   padding-top: 10px;
@@ -1070,6 +1144,7 @@ main .bloc_menu .button_commande button::after {
   transition: opacity 300ms;
 }
 
+/* Footer */
 footer {
   width: 100%;
   margin-top: 0px;

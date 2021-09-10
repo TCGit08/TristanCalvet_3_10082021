@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
+    
+    <!-- La structure du html de cette page restaurant est la même pour chaque page restaurant. Seuls diffèrent les noms et textes 
+     Pas de répétition des commentaires pour les 3 autres pages. -->
+
     <head>
         <title>Ohmyfood - La palette du goût</title>
 	    <meta charset="utf-8" />
@@ -11,13 +15,20 @@
         <link rel="stylesheet" href="./public/css/styles.css">
     </head>
 
+    
     <body>
         
+        <!-- Header -->
+
         <header>
+
+            <!-- Lien interne "Retour avers l'accueil" -->
 
             <a href="index.html">
                 <i class="fas fa-arrow-left"></i>
             </a>
+
+            <!-- Logo de l'entreprise -->
             
             <div class="logo">
                 <img src="./images/logo/ohmyfood.png" alt="logo Ohmyfood"/>
@@ -27,6 +38,8 @@
 
         <main>
 
+            <!-- Image de fond pour l'illustration du restaureant de la page -->
+
             <div class="fond_restaurant">
 
                 <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="exemple de plat - La palette du goût">
@@ -34,7 +47,10 @@
 
             </div> 
 
+
             <div class="bloc_menu">
+
+                <!-- Titre principal : nom du restaurant + cooeur animé (même anim que dans index.html en plus gros) -->
 
                 <div class="nom_restaurant">
                     
@@ -50,7 +66,7 @@
 
                 <div class="menu">
 
-                    <div class="bloc_entrées">  
+                    <div class="bloc_entrées">                  <!-- Structure de ce bloc identique pour plats et desserts -->
                     
                         <h2>ENTRÉES</h2>
                    
@@ -62,9 +78,9 @@
                                 <h4>Au piment d'Espelette</h4> 
                             </div>
                             
-                            <div class="prix-check">
+                            <div class="prix-check">                        <!-- Bloc animé avec la coche mobile au survol -->
                                 <div class="menu_prix">
-                                    <p>25€</p>
+                                    <p>25€</p>                          
                                 </div>
 
                                 <div class="menu_check">
@@ -242,29 +258,32 @@
 
                 </div>
 
+                <!-- Bouton "Commander" -->
+
                 <div class="button_commande">
                     <button type="submit" class="button_submit">Commander</button>
                 </div>
 
             </div>
-
-            
          
         </main>
 
+
+        <!-- Footer -->
+
         <footer>
         
-            <h5>ohmyfood</h5>
+            <h5>ohmyfood</h5>       <!-- Titre affectée de la police Shrikhand pour reproduire l'apparence du logo (image pas nécessaire ici) -->
         
             <ul>
         
                 <li>
-                    <i class="fas fa-utensils"></i>
+                    <i class="fas fa-utensils"></i>     <!-- Icône ustensiles -->
                     Proposer un restaurant
                 </li>
         
                 <li>
-                    <i class="fas fa-hands-helping"></i>
+                    <i class="fas fa-hands-helping"></i>    <!-- Icône des mains tendues -->
                     Devenir partenaire
                 </li>
         
