@@ -223,7 +223,7 @@ main .bloc_présentation .button_sub button:hover::after {
 }
 main .bloc_présentation .button_sub button::after {
   /* Effet de modification de la couleur du bouton par un système de couche (z-index) */
-  content: "...";
+  content: "";
   /* La couche apparait (opacity: 1) ou disparait (opacity: 0 suivant la situation */
   position: absolute;
   top: 0;

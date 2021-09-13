@@ -250,7 +250,7 @@ main {
                 }
 
                 &::after {                          /* Effet de modification de la couleur du bouton par un système de couche (z-index) */
-                    content: "...";                 /* La couche apparait (opacity: 1) ou disparait (opacity: 0 suivant la situation */
+                    content: "";                 /* La couche apparait (opacity: 1) ou disparait (opacity: 0 suivant la situation */
                     position: absolute;
                     top: 0;
                     right: 0;
